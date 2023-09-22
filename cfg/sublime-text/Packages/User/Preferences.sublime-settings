@@ -1,0 +1,28 @@
+{
+	"color_scheme": "Gruvbox Material Dark.sublime-color-scheme",
+	"theme": "Gruvbox Material Dark.sublime-theme",
+	"ignored_packages":
+	[
+	],
+	"font_face" : "JetBrainsMono Nerd Font",
+
+	"font_options": ["no_italic"],
+	"font_size": 9,
+	"draw_indent_guides" : false,
+	"word_wrap" : false,
+	"spellcheck" : true,
+	"line_numbers" : true,
+	"relative_line_numbers" : true,
+	"show_definitions" : true,
+	"vintage_use_clipboard": true,
+	    "show_minimap": false,
+    "show_status_bar": false,
+    "menu_visible": false,
+    "reveal_menu" :true,
+    "themed_title_bar" : false,
+    	"auto_hide_menu": false,
+	"auto_hide_tabs": false,
+	"auto_hide_status_bar": false,
+
+
+}

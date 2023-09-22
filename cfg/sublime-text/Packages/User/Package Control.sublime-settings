@@ -1,0 +1,19 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"1337 Color Scheme",
+		"1Self",
+		"All Autocomplete",
+		"BracketGuard",
+		"Golang",
+		"Golang Build",
+		"Golang Tools Integration",
+		"Gruvbox Material Theme",
+		"Package Control",
+		"SublimeLinter-golangcilint",
+	],
+}
