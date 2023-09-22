@@ -1,7 +1,7 @@
 <h1 align='center'> ✨ Dotfyles<h1>
 <p align="center">
     <p> my configuration files for Hyprland and stuffs </p> </br>
-    <img src="https://github.com/SpitfireGG/HyprNix/assets/wall.png">
+    <img src="https://github.com/SpitfireGG/HyprNix/blob/main/assets/wall.png">
 </p>
 
 ## Showcase
@@ -11,8 +11,8 @@
     📸 Screenshots
     </i></summary>
 
-    <img src="https://github.com/SpitfireGG/HyprNix/assets/one.png">
-    <img src="https://github.com/SpitfireGG/HyprNix/assets/two.png">
+    <img src="https://github.com/SpitfireGG/HyprNix/blob/main/assets/one.png">
+    <img src="https://github.com/SpitfireGG/HyprNix/blob/main/assets/two.png">
 
 </details>
 
