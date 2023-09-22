@@ -10,9 +10,10 @@
     <summary><p>
     📸 Screenshots
     </p></summary>
-
-    <img src="https://github.com/SpitfireGG/HyprNix/blob/main/assets/one.png", alt="picture of hyprland and nvim config">
-    <img src="https://github.com/SpitfireGG/HyprNix/blob/main/assets/two.png", alt="same">
+    <p>
+        <img src="https://github.com/SpitfireGG/HyprNix/blob/main/assets/one.png", alt="picture of hyprland and nvim config">
+        <img src="https://github.com/SpitfireGG/HyprNix/blob/main/assets/two.png", alt="same">
+    </p>
 
 </details>
 
