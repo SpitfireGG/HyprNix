@@ -1,6 +1,6 @@
 <h1 align='center'> ✨ Dotfyles<h1>
 <p align="center">
-    my configuration files for Hyprland and stuffs</br>
+    my configuration files for Hyprland and stuffs<br><br>
     <img src="https://github.com/SpitfireGG/HyprNix/blob/main/assets/wall.png">
 </p>
 
@@ -14,7 +14,6 @@
         <img src="https://github.com/SpitfireGG/HyprNix/blob/main/assets/one.png", alt="picture of hyprland and nvim config">
         <img src="https://github.com/SpitfireGG/HyprNix/blob/main/assets/two.png", alt="same">
     </p>
-
 </details>
 
 ## Config Tree Hyprland
@@ -101,15 +100,29 @@
 8 directories, 54 files
 ```
 
-## Install:
+## Installation:
 
 ```shell
+
+~~Hyprland~~
+
+<b># Caution</b>
+<i> in case that you want to get the whole config dir and make something as mine</i>
+
+mv ~/.config ~/.config_bak
+git clone https://github.com/SpitfireGG/HyprNix.git
+cd HyprNix; mv cfg .config; cp -r .config ~/.config
+
+<i> else just [cp -r <file/dir> <path>] files and folders you want to copy  </i>
+
+~~Nvim~~
+
 mv ~/.config/nvim/ ~/.config/nvim_bak
 git clone https://github.com/SpitfireGG/HyprNix.git; cd HyprNix ;  mv nvim ~/.config/
 ```
 
 ## Credits:
 
-- modified hyplrand and other configs, i'm sorry
-- the nvim config was modified from many other brilliant peoples , i moded some stuffs in it , i personally write golang codes and , i will soon add a sep config for it , please love this thief
-- tmux config too :)
+- i learned hyprland and nvim by modifying others config ,gradually got okay with hyprland and nvim
+- the nvim is a a modified config from the owner of the original one
+- thanks to the original owners :)
