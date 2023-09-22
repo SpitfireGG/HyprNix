@@ -2,6 +2,7 @@
 <p align="center">
     my configuration files for Hyprland and stuffs<br><br>
     <img src="https://github.com/SpitfireGG/HyprNix/blob/main/assets/wall.png">
+    <img src="https://github.com/SpitfireGG/HyprNix/blob/main/assets/three.png">
 </p>
 
 ## Showcase
