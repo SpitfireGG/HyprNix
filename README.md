@@ -104,7 +104,7 @@
 
 ~~Hyprland~~
 
-<b># Caution</b>
+<b> Caution ⚡ </b><br>
 <i> in case that you want to get the whole config dir and make something as mine</i>
 
 ```shell
@@ -113,7 +113,7 @@ git clone https://github.com/SpitfireGG/HyprNix.git
 cd HyprNix; mv cfg .config; cp -r .config ~/.config
 ```
 
-<i> else just [cp -r <file/dir> <path>] files and folders you want to copy </i>
+<p> else just [ cp -r <file/dir> <path> ] files and folders you want to copy </p>
 
 ~~Nvim~~
 
