@@ -102,22 +102,22 @@
 
 ## Installation:
 
+~~Hyprland~~
+
+<b># Caution</b>
+<i> in case that you want to get the whole config dir and make something as mine</i>
+
 ```shell
-
-Hyprland
-
-**Note:** Caution
-
- in case that you want to get the whole config dir and make something as mine
-
 mv ~/.config ~/.config_bak
 git clone https://github.com/SpitfireGG/HyprNix.git
 cd HyprNix; mv cfg .config; cp -r .config ~/.config
+```
 
-else just [cp -r <file/dir> <path>] files and folders you want to copy
+<i> else just [cp -r <file/dir> <path>] files and folders you want to copy </i>
 
-Nvim
+~~Nvim~~
 
+```shell
 mv ~/.config/nvim/ ~/.config/nvim_bak
 git clone https://github.com/SpitfireGG/HyprNix.git; cd HyprNix ;  mv nvim ~/.config/
 ```
