@@ -1,19 +1,21 @@
 <h1 align='center'> ✨ Dotfyles<h1>
 <p align="center">
     my configuration files for Hyprland and stuffs<br><br>
-    <img src="/home/kenzo/Desktop/swappy.png">
-    <img src="/home/kenzo/Desktop/terminal.png">
+    <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/terminal.png", alt = "wtf">
+    <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/swappy.png", alt = "wtf">
 </p>
 
 ## Showcase
+
+
 
 <details>
     <summary><p>
     📸 Screenshots
     </p></summary>
     <p>
-        <img src="/home/kenzo/Desktop/btop.png", alt="picture of hyprland and nvim config">
-        <img src="/home/kenzo/Desktop/firefox.png", alt="same">
+        <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/btop.png", alt="picture of hyprland and nvim config">
+        <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/firefox.png", alt="same">
     </p>
 </details>
 
