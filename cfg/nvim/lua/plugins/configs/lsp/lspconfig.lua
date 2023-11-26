@@ -153,14 +153,6 @@ lspconfig.bashls.setup({
     },
 })
 
-local pid = vim.fn.getpid()
-local OmniSharp = "/home/kenzo/.nix-profile/bin/OmniSharp"
-lspconfig.omnisharp.setup({
-    on_attach = on_attach,
-    use_mono = true,
-    cmd = { OmniSharp, "--languageserver", "--hostPID", tostring(pid) },
-})
-
 lspconfig.zls.setup({
     on_attach = on_attach,
     capabilities = capabilities,
@@ -221,19 +213,27 @@ lspconfig.cssls.setup({
     },
 })
 
+lspconfig.omnisharp.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    rootdir = function(fname)
+        local primary = require("lspconfig").util.root_pattern("*.sln")(fname)
+        local fallback = require("lspconfig").util.root_pattern("*.sln")(fname)
+    end,
+})
+
 -- local dotnet_place = "/home/kenzo/.nix-profile/bin/dotnet"
---[[ lspconfig.csharp_ls.setup({
-	root_dir = function(startpath)
-		return lspconfig.util.root_pattern("*.sln")(startpath)
-			or lspconfig.util.root_pattern("*.csproj")(startpath)
-			or lspconfig.util.root_pattern("*.fsproj")(startpath)
-			or lspconfig.util.root_pattern(".git")(startpath)
-	end,
-	-- cmd = { dotnet_place },
-	capabilities = capabilities,
-	on_attach = on_attach,
-	filetypes = { "cs" },
-}) ]]
+lspconfig.csharp_ls.setup({
+    -- cmd = { dotnet_place },
+    on_attach = on_attach,
+    capabilities = capabilities,
+    root_dir = function(startpath)
+        return lspconfig.util.root_pattern("*.sln")(startpath)
+            or lspconfig.util.root_pattern("*.csproj")(startpath)
+            or lspconfig.util.root_pattern("*.fsproj")(startpath)
+            or lspconfig.util.root_pattern(".git")(startpath)
+    end,
+})
 
 lspconfig.eslint.setup({
     capabilities = capabilities,
@@ -333,3 +333,10 @@ local rust_opts = {
     },
 }
 rt.setup(rust_opts)
+
+require("roslyn").setup({
+    dotnet_cmd = "dotnet",           -- this is the default
+    roslyn_version = "4.8.0-3.23475.7", -- this is the default
+    on_attach = on_attach,
+    capabilities = capabilities,
+})
