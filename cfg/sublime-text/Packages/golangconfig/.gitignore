@@ -1,4 +1,0 @@
-*.pyc
-__pycache__
-dev/coverage_reports/
-dev/mock_fs/

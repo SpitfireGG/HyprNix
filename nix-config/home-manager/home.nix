@@ -1,1 +1,0 @@
-/home/kenzo/.config/home-manager/home.nix
