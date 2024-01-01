@@ -1,0 +1,224 @@
+* {
+    /*font-family: VictorMono, Iosevka Nerd Font, Noto Sans CJK;*/
+    font-family:
+        "MartianMono Nerd Font";
+    font-size: 8.6px;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+}
+
+window#waybar {
+    background-color: #03112e;
+    /* 80% opaque black */
+
+    border-radius: 9px 9px 9px 9px;
+    /*border-color: #00ff6a;*/
+    /*border: 0.8px solid rgb(255, 255, 0);*/
+}
+
+#workspaces {
+    background: rgba(0, 0, 0, 0);
+    margin: 5px 5px 5px 10px;
+    padding: 0px 5px 0px 5px;
+    border: 0.5px solid #ffd0a0;
+    border-radius: 4px;
+}
+
+#workspaces button {
+    padding: 0px 10px;
+    font-size: 19px;
+    border-radius: 16px;
+    /* color: black; */
+    background-color: transparent;
+}
+
+#workspaces button.active {
+    color: #f4d9e1;
+    background-color: transparent;
+    border-radius: 16px;
+}
+
+#workspaces button:hover {
+    background-color: #e6b9c6;
+    color: black;
+    border-radius: 16px;
+}
+
+#custom-date,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+/* #custom-cava-internal, */
+
+#custom-randwall,
+#custom-launcher {
+    background-color: #241717;
+    background: transparent;
+    padding: 5px 5px 5px 5px;
+    margin: 5px 5px 5px 5px;
+    border-radius: 8px;
+    color: #8bd5ca;
+}
+
+#cava {
+    font-family: "Hack Nerd Font";
+    margin-right: 80px;
+    color: #ffdab9;
+}
+
+/* 
+#custom-cava-internal {
+  color : #33ccff;
+                   font-family: "Hack Nerd Font" ;
+                     background-color: #db4b4b;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 0px;
+  padding: 5px 10px;
+  border: 1px solid blue;
+} */
+
+#custom-date {
+    color: #ca365d;
+}
+
+#custom-power {
+    color: #37489c;
+    background-color: #db4b4b;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 0px;
+    padding: 5px 10px;
+}
+
+#tray {
+    background: #282828;
+    margin: 5px 10px 5px 5px;
+    border-radius: 16px;
+    padding: 0px 7px;
+    /*border-right: solid 1px #282738;*/
+}
+
+#clock {
+    color: black;
+    /* color: #ffff00; */
+    /* background-color: #241717; */
+    background-color: whitesmoke;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-right: 4px;
+    margin-left: 10px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    /*border-left: solid 1px #282738;*/
+}
+
+#battery {
+    color: #f8a966;
+}
+
+#battery.charging {
+    color: #9ece6a;
+}
+
+#battery.warning:not(.charging) {
+    background-color: #f7768e;
+    color: #24283b;
+    border-radius: 5px 5px 5px 5px;
+}
+
+#backlight {
+    border-radius: 0px 0px 0px 0px;
+    color: rgb(187, 226, 202);
+    margin: 5px;
+    margin-left: 2px;
+    margin-right: 14px;
+    padding: 0px 0px;
+}
+
+#custom-redshift {
+    color: black;
+    margin-right: 15px;
+}
+
+#network {
+    color: cyan;
+    border-radius: 8px;
+    margin-right: 5px;
+}
+
+#temperature {
+    color: #66cdaa;
+}
+
+#pulseaudio {
+    color: #d6d2e0;
+    border-radius: 8px;
+    margin-left: 0px;
+}
+
+#pulseaudio.muted {
+    background: transparent;
+    color: #928374;
+    border-radius: 8px;
+    margin-left: 0px;
+}
+
+#custom-launcher {
+    color: #a6dddb;
+    margin: 4px 10px 4px 4px;
+    padding: 0px 19px 0px 14px;
+    font-size: 13px;
+}
+
+#custom-launcher button:hover {
+    background-color: #fb4934;
+    color: transparent;
+    border-radius: 8px;
+    margin-right: -5px;
+    margin-left: 10px;
+}
+
+#custom-playerctl {
+    background: transparent;
+    color: #e7eb04;
+    padding-left: 15px;
+    padding-right: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
+    font-size: 14px;
+}
+
+#custom-playerlabel {
+    background: transparent;
+    padding-left: 20px;
+    padding-right: 15px;
+    border-radius: 16px;
+    /* border-left: solid 1px #282738; */
+    /*border-right: solid 1px #282738;*/
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: -6px;
+    color: #8bd5ca;
+    font-weight: bold;
+}
+
+#window {
+    background: #1f1c1c;
+    background-color: #241717;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 16px;
+    /*border-left: solid 1px #282738;*/
+    /*border-right: solid 1px #282738;*/
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
