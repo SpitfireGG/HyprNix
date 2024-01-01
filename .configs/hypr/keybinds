@@ -1,0 +1,69 @@
+
+$mainMod = SUPER
+
+bind = $mainMod, Q, killactive # kill the window on focus
+bind = $mainMod, delete, exit # kill hyperland session
+bind = $mainMod, W, togglefloating # toggle the window on focus to float
+bind = ALT, return, fullscreen # toggle the window on focus to fullscreen
+bindl = Alt, P,exec,   pavucontrol
+bindl = ALT,S, exec, shutdown
+bind = $mainMod, V, pseudo
+bind = $mainMod, H , togglespecialworkspace,
+bind = $mainMod, K, togglesplit
+bind = $mainMod, A, exec, alacritty
+
+bind = $mainMod, E, exec, thunar
+bind = $mainMod, return, exec, kitty # open terminal
+bind = $mainMod, C, exec, code # open vs code
+bind = $mainMod, F, exec, firefox # open browser
+bind = $mainModShift,F , exec, firefox --private-window # open browser
+bind = $mainMod, T, exec, font-manager
+bind = $mainMod, D,exec, discord
+bind = $mainMod, B  ,exec,  qbittorrent
+bind = $mainMod, S, exec , spotify
+bind = $mainMod, O, exec, vencorddesktop
+
+bind = ControlShift, Escape, exec, gnome-system-monitor
+bind = ControlShift, B, exec, alacritty -e  btop
+
+
+bindl = SuperShift, L, exec, sleep 0.1 && systemctl suspend
+bindl = ALT,S, exec, shutdown
+bindl = ALT,R, exec, reboot
+
+
+bind = $mainMod, space, exec, /home/kenzo/.config/rofi/launchers/type-6/launcher.sh     # launch desktop applications
+bind = $mainMod, backspace, exec, /home/kenzo/.config/rofi/powermenu/type-2/powermenu.sh     # launch desktop applications
+
+bind = $mainMod, tab, exec, pkill rofi || ~/.config/hypr/scripts/rofilaunch.sh  # switch between desktop applications
+
+bindl = ,XF86AudioMute, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindle=, XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+
+bindle=, XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-
+
+bindl = Control,m , exec, swayosd --output-volume 0
+bindle= Control,x , exec, swayosd --output-volume raise 2
+bindle= Control,z, exec, swayosd --output-volume lower 2
+
+bindl = ,F11, exec, brightnessctl set 1%-
+bindl = ,F12, exec, brightnessctl set 1%+
+
+
+
+#bind = $mainMod, L, exec, swaylock # lock screen
+#bind = $mainMod, backspace, exec, wlogout --protocol layer-shell # logout menu
+bind = $mainMod, P, exec, grim -g "$(slurp)" - | swappy -f - # screenshot snip
+
+
+## Testing
+bind = SuperAlt, f12, exec, notify-send "Hyprland version: $(hyprctl version | head -2 | tail -1 | cut -f2 -d ' ')" "eww eww nigga" -a 'Hyprland keybind'
+bind = SuperAlt, f12, exec, notify-send "Millis since epoch" "$(date +%s%N | cut -b1-13)" -a 'Hyprland keybind'
+bind = SuperAlt, Equal, exec, notify-send "Hyprland test" "oh yeah this fucking works well" -u critical -a 'Hyprland keybind'
+
+
+
+
+
+
+
+

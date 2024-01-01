@@ -1,0 +1,31 @@
+
+exec-once = lxqt-policykit-agent
+
+exec-once  = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP 
+
+exec-once  = exec-once=dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY
+
+exec-once  = dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP --all 
+
+exec-once = swww init; swww kill; swww init # idk why tbh
+
+  # reset XDPH for screenshare
+exec-once  = ~/.config/hypr/scripts/resetxdgportal.sh  
+
+  # launch the system panel
+exec-once  = waybar 
+
+exec-once  =  Systray app for Network/Wifi
+exec-once  = nm-applet --indicator # 
+
+ # start notification demon
+exec-once  = dunst  
+
+
+exec-once = hyprctl setcursor Phinger-Cursors 18
+
+
+exec-once  = notify-send -a aurora "hello hoeme $(whoami), my Nigga !!"  
+
+exec-once  = ./scripts/ping.sh
+

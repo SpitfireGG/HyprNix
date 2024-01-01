@@ -1,0 +1,142 @@
+#
+#
+## Move focus with mainMod + arrow keys
+#bind = $mainMod, left, movefocus, l
+#bind = $mainMod, right, movefocus, r
+#bind = $mainMod, up, movefocus, u
+#bind = $mainMod, down, movefocus, d
+#bind = ALT, Tab, movefocus, d
+#
+#
+## Switch workspaces with mainMod + [0-9]
+#bind = $mainMod, 1, workspace, 1
+#bind = $mainMod, 2, workspace, 2
+#bind = $mainMod, 3, workspace, 3
+#bind = $mainMod, 4, workspace, 4
+#bind = $mainMod, 5, workspace, 5
+#bind = $mainMod, 6, workspace, 6
+#bind = $mainMod, 7, workspace, 7
+#bind = $mainMod, 8, workspace, 8
+#bind = $mainMod, 9, workspace, 9
+#bind = $mainMod, 0, workspace, 10
+#
+#
+## Resize windows
+#binde = $mainMod SHIFT, right, resizeactive, 10 0
+#binde = $mainMod SHIFT, left, resizeactive, -10 0
+#binde = $mainMod SHIFT, up, resizeactive, 0 -10
+#binde = $mainMod SHIFT, down, resizeactive, 0 10
+#
+#
+## Move active window to a workspace with mainMod + SHIFT + [0-9]
+#bind = $mainMod SHIFT, 1, movetoworkspace, 1
+#bind = $mainMod SHIFT, 2, movetoworkspace, 2
+#bind = $mainMod SHIFT, 3, movetoworkspace, 3
+#bind = $mainMod SHIFT, 4, movetoworkspace, 4
+#bind = $mainMod SHIFT, 5, movetoworkspace, 5
+#bind = $mainMod SHIFT, 6, movetoworkspace, 6
+#bind = $mainMod SHIFT, 7, movetoworkspace, 7
+#bind = $mainMod SHIFT, 8, movetoworkspace, 8
+#bind = $mainMod SHIFT, 9, movetoworkspace, 9
+#bind = $mainMod SHIFT, 0, movetoworkspace, 10
+#
+#
+## Scroll through existing workspaces with mainMod + scroll
+#bind = $mainMod, mouse_down, workspace, e+1
+#bind = $mainMod, mouse_up, workspace, e-1
+#
+#
+## Move/resize windows with mainMod + LMB/RMB and dragging
+#bindm = $mainMod, mouse:272, movewindow
+#bindm = $mainMod, mouse:273, resizewindow
+
+
+########################### Keybinds for Hyprland ############################
+# Swap windows
+bind = SuperShift, left, movewindow, l
+bind = SuperShift, right, movewindow, r
+bind = SuperShift, up, movewindow, u
+bind = SuperShift, down, movewindow, d
+# Move focus
+bind = Super, left, movefocus, l
+bind = Super, right, movefocus, r
+bind = Super, up, movefocus, u
+bind = Super, down, movefocus, d
+bind = Super, BracketLeft, movefocus, l
+bind = Super, BracketRight, movefocus, r
+
+# Workspace, window, tab switch with keyboard
+bind = ControlSuper, right, workspace, +1
+bind = ControlSuper, left, workspace, -1
+bind = ControlSuper, BracketLeft, workspace, -1
+bind = ControlSuper, BracketRight, workspace, +1
+bind = ControlSuper, up, workspace, -5
+bind = ControlSuper, down, workspace, +5
+bind = Super, Page_Down, workspace, +1
+bind = Super, Page_Up, workspace, -1
+bind = ControlSuper, Page_Down, workspace, +1
+bind = ControlSuper, Page_Up, workspace, -1
+bind = SuperAlt, Page_Down, movetoworkspace, +1
+bind = SuperAlt, Page_Up, movetoworkspace, -1
+bind = SuperShift, Page_Down, movetoworkspace, +1
+bind = SuperShift, Page_Up, movetoworkspace, -1
+bind = ControlSuperShift, Right, movetoworkspace, +1
+bind = ControlSuperShift, Left, movetoworkspace, -1
+bind = SuperShift, mouse_down, movetoworkspace, -1
+bind = SuperShift, mouse_up, movetoworkspace, +1
+bind = SuperAlt, mouse_down, movetoworkspace, -1
+bind = SuperAlt, mouse_up, movetoworkspace, +1
+
+# Window split ratio
+binde = Super, Minus, splitratio, -0.1
+binde = Super, Equal, splitratio, 0.1
+binde = Super, Semicolon, splitratio, -0.1
+binde = Super, Apostrophe, splitratio, 0.1
+
+# Fullscreen
+bind = ALT, F, fullscreen, 0
+bind = ALT, D, fullscreen, 1
+bind = Super_Alt, F, fakefullscreen, 0
+
+# Switching
+bind = Super, 1, workspace, 1
+bind = Super, 2, workspace, 2
+bind = Super, 3, workspace, 3
+bind = Super, 4, workspace, 4
+bind = Super, 5, workspace, 5
+bind = Super, 6, workspace, 6
+bind = Super, 7, workspace, 7
+bind = Super, 8, workspace, 8
+bind = Super, 9, workspace, 9
+bind = Super, 0, workspace, 10
+bind = Super, S, togglespecialworkspace,
+bind = ControlSuper, S, togglespecialworkspace,
+bind = Alt, Tab, cyclenext
+bind = Alt, Tab, bringactivetotop,   # bring it to the top
+
+# Move window to workspace Super + Alt + [0-9] 
+bind = Super SHIFT, 1, movetoworkspacesilent, 1
+bind = Super Shift, 2, movetoworkspacesilent, 2
+bind = Super Shift, 3, movetoworkspacesilent, 3
+bind = Super Shift, 4, movetoworkspacesilent, 4
+bind = Super Shift, 5, movetoworkspacesilent, 5
+bind = Super Shift, 6, movetoworkspacesilent, 6
+bind = Super Shift, 7, movetoworkspacesilent, 7
+bind = Super Shift, 8, movetoworkspacesilent, 8
+bind = Super Shift, 9, movetoworkspacesilent, 9
+bind = Super Shift, 0, movetoworkspacesilent, 10
+bind = ControlShiftSuper, Up, movetoworkspacesilent, special
+bind = SuperAlt, S, movetoworkspacesilent, special
+
+# Scroll through existing workspaces with (Control) + Super + scroll
+bind = Super, mouse_up, workspace, +1
+bind = Super, mouse_down, workspace, -1
+bind = ControlSuper, mouse_up, workspace, +1
+bind = ControlSuper, mouse_down, workspace, -1
+
+# Move/resize windows with Super + LMB/RMB and dragging
+bindm = Super, mouse:272, movewindow
+bindm = Super, mouse:273, resizewindow
+# bindm = Super, mouse:274, movewindow
+bindm = Super, Z, movewindow
+bind = ControlSuper, Backslash, resizeactive, exact 640 480

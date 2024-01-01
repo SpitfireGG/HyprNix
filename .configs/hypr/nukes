@@ -1,0 +1,19 @@
+
+
+windowrulev2 = float,class:^(blueman-manager)$
+windowrulev2 = float,class:^(nm-connection-editor)$
+windowrulev2 = float,class:^(org.kde.polkit-kde-authentication-agent-1)$
+
+
+ windowrulev2 = opacity 0.90 0.90, class:^(gedit)$
+ windowrulev2 = opacity 1 1, class:^(Code)$
+ windowrulev2 = opacity 1 1,  class:^(kitty)$
+ windowrulev2 = opacity 1 1, class:^(alacritty || Alacritty)$
+ windowrulev2 = opacity 0.70 0.70, class:^(Spotify)$
+ windowrulev2 = opacity 0.80 0.80, class:^(spotify)$
+ windowrulev2 = opacity 0.9 0.9, class:^(thunar)$
+ windowrulev2 = opacity 0.80 0.80, class:^(twitter)$
+ windowrulev2 = opacity 0.80 0.80, class:^(discord)$
+ windowrulev2 = opacity 1 1, class:^(librewolf)$
+ windowrulev2 = opacity 0.80 0.80, class:^(steam)$
+ windowrulev2 = opacity 0.80 0.80, class:^(waybar)$
