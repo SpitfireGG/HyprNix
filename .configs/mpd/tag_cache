@@ -1,0 +1,133 @@
+info_begin
+format: 2
+mpd_version: 0.23.14
+fs_charset: UTF-8
+tag: Artist
+tag: ArtistSort
+tag: Album
+tag: AlbumSort
+tag: AlbumArtist
+tag: AlbumArtistSort
+tag: Title
+tag: Track
+tag: Name
+tag: Genre
+tag: Date
+tag: OriginalDate
+tag: Composer
+tag: ComposerSort
+tag: Performer
+tag: Conductor
+tag: Work
+tag: Movement
+tag: MovementNumber
+tag: Ensemble
+tag: Location
+tag: Grouping
+tag: Disc
+tag: Label
+tag: MUSICBRAINZ_ARTISTID
+tag: MUSICBRAINZ_ALBUMID
+tag: MUSICBRAINZ_ALBUMARTISTID
+tag: MUSICBRAINZ_TRACKID
+tag: MUSICBRAINZ_RELEASETRACKID
+tag: MUSICBRAINZ_WORKID
+info_end
+directory: 1nonly
+mtime: 1702741375
+begin: 1nonly
+directory: [2020] Stay With Me
+mtime: 1702741383
+begin: 1nonly/[2020] Stay With Me
+song_begin: 1nonly - Stay With Me - Stay With Me.mp3
+Time: 141.531000
+Artist: 1nonly
+Title: Stay With Me
+Album: Stay With Me
+Track: 1
+OriginalDate: 2020
+Genre: aesthetic rap
+Disc: 1
+Format: 44100:24:2
+mtime: 1702741384
+song_end
+end: 1nonly/[2020] Stay With Me
+end: 1nonly
+directory: BITMEIT
+mtime: 1702741447
+begin: BITMEIT
+directory: [2022] Phonk Music 2022 Aggressive Drift Phonk - Boss
+mtime: 1702741456
+begin: BITMEIT/[2022] Phonk Music 2022 Aggressive Drift Phonk - Boss
+song_begin: BITMEIT - Phonk Music 2022 Aggressive Drift Phonk - Boss - Phonk Music 2022 Aggressive Drift Phonk - Boss.mp3
+Time: 147.722000
+Artist: BITMEIT
+Title: Phonk Music 2022 Aggressive Drift Phonk - Boss
+Album: Phonk Music 2022 Aggressive Drift Phonk - Boss
+Track: 1
+OriginalDate: 2022
+Disc: 1
+Format: 44100:24:2
+mtime: 1702741458
+song_end
+end: BITMEIT/[2022] Phonk Music 2022 Aggressive Drift Phonk - Boss
+end: BITMEIT
+directory: INTERWORLD
+mtime: 1702741187
+begin: INTERWORLD
+directory: [2021] METAMORPHOSIS
+mtime: 1702741196
+begin: INTERWORLD/[2021] METAMORPHOSIS
+song_begin: INTERWORLD - METAMORPHOSIS - METAMORPHOSIS.mp3
+Time: 142.889000
+Artist: INTERWORLD
+Title: METAMORPHOSIS
+Album: METAMORPHOSIS
+Track: 1
+OriginalDate: 2021
+Genre: phonk brasileiro
+Disc: 1
+Format: 44100:24:2
+mtime: 1702741197
+song_end
+end: INTERWORLD/[2021] METAMORPHOSIS
+end: INTERWORLD
+directory: phonk.me
+mtime: 1702741428
+begin: phonk.me
+directory: [2022] GHOST!
+mtime: 1702741440
+begin: phonk.me/[2022] GHOST!
+song_begin: phonk.me - GHOST! - GHOST!.mp3
+Time: 231.732000
+Artist: phonk.me; KIIXSHI
+Title: GHOST!
+Album: GHOST!
+Track: 1
+OriginalDate: 2022
+Genre: gym phonk
+Disc: 1
+Format: 44100:24:2
+mtime: 1702741439
+song_end
+end: phonk.me/[2022] GHOST!
+end: phonk.me
+directory: Retromelon
+mtime: 1702741469
+begin: Retromelon
+directory: [2023] DRIFT FOREVER PHONK
+mtime: 1702741489
+begin: Retromelon/[2023] DRIFT FOREVER PHONK
+song_begin: Retromelon - DRIFT FOREVER PHONK - TOKYO DRIFT PHONK - REMIX.mp3
+Time: 192.078000
+Artist: Retromelon; Phonk Music Now; Trap Music Now
+Title: TOKYO DRIFT PHONK - REMIX
+Album: DRIFT FOREVER PHONK
+Track: 1
+OriginalDate: 2023
+Disc: 1
+Format: 44100:24:2
+mtime: 1702741491
+song_end
+end: Retromelon/[2023] DRIFT FOREVER PHONK
+end: Retromelon
