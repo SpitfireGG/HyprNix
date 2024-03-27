@@ -1,14 +1,14 @@
 <h1 align='center'> ✨ Dotfyles<h1>
 <p align="center">
-    my configuration files for Hyprland and stuffs<br><br>
-    <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/terminal.png", alt = "wtf">
-    <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/swappy.png", alt = "wtf">
+    Hyprland configuration files <br><br>
+    <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/oplas.png", alt = "wtf">
+    <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/nvim.png", alt = "wtf">
+    <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/dunstFIrefox.png", alt = "wtf">
 </p>
 
-## Showcase
-
-
-
+<h1 align='center'>
+## SHOWCASES
+<h1> 
 <details>
     <summary><p>
     📸 Screenshots
@@ -19,103 +19,6 @@
     </p>
 </details>
 
-## Config Tree Hyprland
-
-```
-├── hyprland.conf
-├── main.nix
-├── scripts
-│   ├── screenshot.sh
-│   └── volumecontrol.sh
-├── walls
-└── xdg-portal-hyprland
-```
-
-## Config Tree Nvim
-
-```
-├── init.lua
-├── lazy-lock.json
-└── lua
-    ├── plugins
-    │   ├── configs
-    │   │   ├── alpha.lua
-    │   │   ├── autopairs.lua
-    │   │   ├── bufferline.lua
-    │   │   ├── colorize.lua
-    │   │   ├── comment.lua
-    │   │   ├── debugging
-    │   │   │   └── go.lua
-    │   │   ├── devdocs.lua
-    │   │   ├── diagflow.lua
-    │   │   ├── disabled
-    │   │   │   ├── auto-session.lua
-    │   │   │   ├── block.lua
-    │   │   │   ├── dropbar.lua
-    │   │   │   ├── FuckerGPT.lua
-    │   │   │   └── hardtime.lua
-    │   │   ├── dressing.lua
-    │   │   ├── gitlinker.lua
-    │   │   ├── gitsigns.lua
-    │   │   ├── harpoon.lua
-    │   │   ├── hop.lua
-    │   │   ├── hyper.lua
-    │   │   ├── icons.lua
-    │   │   ├── keymaps.lua
-    │   │   ├── lsp
-    │   │   │   ├── cmp.lua
-    │   │   │   ├── conform.lua
-    │   │   │   ├── lspconfig.lua
-    │   │   │   ├── lspsaga.lua
-    │   │   │   ├── luasnip.lua
-    │   │   │   ├── mason.lua
-    │   │   │   ├── nullus
-    │   │   │   └── omnisharp.lua
-    │   │   ├── lualine.lua
-    │   │   ├── matchup.lua
-    │   │   ├── navic.lua
-    │   │   ├── neoscroll.lua
-    │   │   ├── neo-tree.lua
-    │   │   ├── notify.lua
-    │   │   ├── nvim-webdev-icons.lua
-    │   │   ├── oil.lua
-    │   │   ├── personalDevelopmentEnv
-    │   │   │   ├── clang.lua
-    │   │   │   ├── css-intel.lua
-    │   │   │   ├── neodev.lua
-    │   │   │   ├── neotest.lua
-    │   │   │   └── rust-tools.lua
-    │   │   ├── regexer.lua
-    │   │   ├── spectre.lua
-    │   │   ├── surround.lua
-    │   │   ├── telescope.lua
-    │   │   ├── todo-comments.lua
-    │   │   ├── toggle-term.lua
-    │   │   ├── treesitter.lua
-    │   │   ├── ufo.lua
-    │   │   └── whichkey.lua
-    │   └── init.lua
-    ├── ui
-    │   ├── config.lua
-    │   ├── icons.lua
-    │   ├── init.lua
-    │   ├── lsp.lua
-    │   ├── renamer.lua
-    │   └── signature.lua
-    └── user
-        ├── bfs
-        │   ├── config.lua
-        │   ├── init.lua
-        │   ├── keymaps.lua
-        │   ├── split.lua
-        │   └── utils.lua
-        ├── colorscheme.lua
-        ├── functions.lua
-        ├── globals.lua
-        ├── keymaps.lua
-        ├── lazy.lua
-        └── options.lua
-```
 
 ## Installation:
 
