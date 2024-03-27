@@ -2,18 +2,18 @@
 <p align="center">
     Hyprland configuration files <br><br>
     <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/oplas.png", alt = "wtf">
-    <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/nvim.png", alt = "wtf">
-    <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/dunstFIrefox.png", alt = "wtf">
 </p>
 
 <h1 align='center'>
-## SHOWCASES
+SHOWCASES
 <h1> 
 <details>
     <summary><p>
     📸 Screenshots
     </p></summary>
     <p>
+        <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/dunstFIrefox.png", alt = "wtf">
+        <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/nvim.png", alt = "wtf">
         <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/btop.png", alt="picture of hyprland and nvim config">
         <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/firefox.png", alt="same">
     </p>
