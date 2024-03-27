@@ -13,6 +13,7 @@ SHOWCASES
     </p></summary>
     <p>
         <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/dunstFIrefox.png", alt = "wtf">
+        <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/something.png", alt = "wtf">
         <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/nvim.png", alt = "wtf">
         <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/btop.png", alt="picture of hyprland and nvim config">
         <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/firefox.png", alt="same">
