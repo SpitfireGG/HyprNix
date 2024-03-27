@@ -1,25 +1,29 @@
-{ pkgs, ... }:
+{configs, inputs,  pkgs, ... }:
 
 {
   imports = [ ./hardware-configuration.nix ];
 
   boot = {
+ kernelParams = [ "i915.force_probe=0a16" ];
+ kernel.sysctl = { "vm.swappiness" = 10; };
+ initrd.availableKernelModules = [ "hid_cherry" ];
+ kernelPackages = pkgs.linuxPackages_latest;
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = false;
     };
-    kernelParams = [ "splash" ];
-    kernel.sysctl = { "vm.swappiness" = 0; };
-    plymouth.enable = false;
   };
 
-  zramSwap = {
+  /* zramSwap = {
     enable = true;
     algorithm = "zstd";
-  };
+  }; */
 
   environment = {
     systemPackages = with pkgs; [
+
+
+        xdg-desktop-portal-hyprland
 
       libsForQt5.qt5.qtquickcontrols2
       libsForQt5.qt5.qtgraphicaleffects
@@ -29,13 +33,11 @@
       gnome.gnome-system-monitor
 
       betterbird
-      birdtray
 
       vscode-fhs
       audacity
 
       vim
-      krita
 
       wayland
       unrar
@@ -47,7 +49,6 @@
       xfce.tumbler
 
       inotify-tools
-      eww-wayland
       swww
       fx
       stockfish
@@ -56,7 +57,6 @@
       btop
       cava
       dunst
-      obs-studio
 
       udisks
       psmisc
@@ -82,7 +82,6 @@
       tmux
       playerctl
       pamix
-      cool-retro-term
       fish
       starship
       gnutar
@@ -91,7 +90,6 @@
       sddm
       ranger
       lf
-      pistol
       tree
       spotify
       tree-sitter
@@ -114,31 +112,32 @@
 
       go
       gcc
-      clang
       zig
       zls
       rustc
       rustup
       rust-analyzer
       stylua
-      ocaml
-      ocaml-top
-      dotnet-sdk_7
+      # ocaml
+      # ocaml-top
+      # dotnet-sdk_7
 
-      nix-doc
-      nix-output-monitor
-      nix-ld
-      nix-du
-      nix-web
-      nix-top
-      nix-update
-      nix-melt
-      nix-tour
-      nix-unit
-      nix-health
-      nix-deploy
+      #networking tools
+      httpie
+      darkstat
+      freeradius
+      dig
+      dstat
+      iftop
+      mtr-gui
+      mtr
+      nethogs
+      nload
+      slurm-nm
+      tcpdump
+      atop
 
-      nix-tree
+      bitwarden
 
     ];
     variables.EDITOR = "nvim";
@@ -161,11 +160,11 @@
   environment.sessionVariables = {
     NIXOS_XDG_OPEN_USE_PORTAL = "1";
     MOZ_ENABLE_WAYLAND = "1";
-    DOTNET_ROOT = "${pkgs.dotnet-sdk_7}";
+    # DOTNET_ROOT = "${pkgs.dotnet-sdk_7}";
   };
 
   nix = {
-    settings.trusted-users = [ "root" "kenzo" ];
+ binaryCaches = [ "https://aseipp-nix-cache.global.ssl.fastly.net" ];
     package = pkgs.nixFlakes;
     settings = {
       max-jobs = 4;
@@ -195,8 +194,10 @@
   };
 
   programs = {
-    fzf.keybindings = true;
-    fzf.fuzzyCompletion = true;
+    # wireshark.enable = true;
+
+    # fzf.keybindings = true;
+    # fzf.fuzzyCompletion = true;
 
     gnome-disks.enable = true;
     hyprland.enable = true;
@@ -224,20 +225,20 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   services = {
-    flatpak.enable = true;
     fstrim.enable = true;
     gvfs.enable = true;
     dbus.enable = true;
     udisks2.enable = true;
-    tlp.enable = true;
-    upower.enable = true;
-    power-profiles-daemon.enable = false;
-    journald.extraConfig = "MaxRetentionSec=1week";
+    tlp.enable = false;
+    /*
+    upower.enable = true; */
+    # power-profiles-daemon.enable = false;
+    # journald.extraConfig = "MaxRetentionSec=1week";
     xserver = {
       dpi = 106;
       enable = true;
-      videoDrivers = [ "intel" ];
-      layout = "us";
+      videoDrivers = [ "nouveau" ];
+      xkb.layout = "us";
       libinput = {
         enable = true;
         touchpad = {
@@ -250,10 +251,10 @@
       displayManager.sddm.enable = true;
       displayManager.sddm.theme =
         "${import ../home-manager/conf/ui/sddm.nix { inherit pkgs; }}";
-      desktopManager.gnome.enable = false;
+      # desktopManager.gnome.enable = false;
     };
     openssh = {
-      enable = true;
+      enable = false;
       ports = [ 4000 ];
       settings.PasswordAuthentication = false;
       banner = "/etc/ssh-banner";
@@ -268,7 +269,6 @@
     };
   };
 
-  hardware = { opengl.enable = true; };
 
   # powerManagement = { cpuFreqGovernor = "performance"; };
 
@@ -278,7 +278,7 @@
       home = "/home/kenzo";
       shell = pkgs.fish;
       description = "nixOs";
-      extraGroups = [ "networkmanager" "wheel" "audio" "video" ];
+      extraGroups = [ "networkmanager" "wheel" "audio" "video" "wireshark" ];
     };
   };
 
@@ -290,12 +290,12 @@
         });
       })
     ];
+    config.pulseaudio = true;
     config.permittedInsecurePackages = [
       "unrar"
       "electron-12.2.3"
       "openssl-1.1.1v"
       "python-2.7.18.6"
-      "figma-linux-0.10.0"
       "nodejs-14.21.3"
       "spotify"
       "discord"
@@ -321,23 +321,18 @@
   };
 
   sound.enable = true;
+  # hardware.pulseaudio.enable = true;
+# hardware.pulseaudio.support32Bit = true;
   # hardware.pulseaudio.extraConfig = "load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1";
+  # hardware.pulseaudio.extraConfig = "unload-module module-suspend-on-idle";
 
-  security = {
-    rtkit.enable = true;
-    # polkit.enable = false;
-    # polkit.debug = true;
-    # polkit.extraConfig = ''
-    #     polkit.addRule(function(action, subject) {
-    #     // Make sure to set { security.polkit.debug = true; } in configuration.nix
-    #     polkit.log("user " +  subject.user + " is attempting action " + action.id + " from PID " + subject.pid);
-    #   });
-    #
-    #   /* Allow any local user to do anything (dangerous!). */
-    #   polkit.addRule(function(action, subject) {
-    #     if (subject.local) return "yes";
-    # '';
-  };
+  /* hardware = {
+       bluetooth.enable = true;
+       bluetooth.network = { General = { DisableSecurity = true; }; };
+       bluetooth.input = { General = { IdleTimeout = 50; }; };
+     };
+  */
+
 
   programs.dconf.enable = true;
   qt = {
@@ -346,7 +341,7 @@
     style = "gtk2";
   };
 
-  documentation.nixos.enable = true;
+  documentation.nixos.enable = false;
 
   system.stateVersion = "23.05";
 
