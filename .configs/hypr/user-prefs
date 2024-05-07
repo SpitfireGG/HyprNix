@@ -42,8 +42,8 @@ binds {
 
 general {
 	
-  gaps_in = 5
-  gaps_out = 5
+  gaps_in = 4
+  gaps_out = 4
   border_size = 0
 #col.active_border = rgba(00ff99ee) rgba(33ccffee) rgba(00ff99ee) 45deg
 # col.inactive_border = rgba(595959aa)
@@ -59,7 +59,7 @@ decoration {
   rounding = 4
 
   blur {
-    enabled = true
+    enabled = false
     size = 3
     passes = 3
     new_optimizations =  true
