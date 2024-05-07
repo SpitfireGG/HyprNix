@@ -1,0 +1,6 @@
+env = QT_QPA_PLATFORM, wayland
+env = QT_QPA_PLATFORMTHEME, qt5ct
+env = WLR_NO_HARDWARE_CURSORS, 1
+
+
+
