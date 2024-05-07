@@ -6,8 +6,8 @@
   "margin-left": 0,
   "margin-right": 0,
     "exclusive" : true,
-    "height" : 3,
-    "passthrough" : false,
+    "height" : 6,
+    "passthrough" : 0,
     "gtk-layer-shell" : true,
 
 
@@ -16,7 +16,6 @@
     "hyprland/workspaces",
     "custom/playerctl",
     "custom/playerlabel",
-    "cava"
   ],
     "modules-center" : [
         "clock"
@@ -32,18 +31,18 @@
     "network",
     "tray",
   ],
-  "cava": {
-    "framerate": 60,
-    "sensitivity": 2,
-    "bars": 20,
-    "method": "pulse",
-    "source": "auto",
-    "stereo": true,
-    "bar_delimiter": 0,
-    "noise_reduction": 0.77,
-    "input": 1,
-    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
-  },
+  // "cava": {
+  //   "framerate": 60,
+  //   "sensitivity": 2,
+  //   "bars": 20,
+  //   "method": "pulse",
+  //   "source": "auto",
+  //   "stereo": true,
+  //   "bar_delimiter": 0,
+  //   "noise_reduction": 0.77,
+  //   "input": 1,
+  //   "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+  // },
   // Modules configuration
   "clock": {
               "format" :"{:%d %b %H:%M}",
@@ -58,15 +57,15 @@
     "format": "{icon}",
     "on-click": "activate",
     "format-icons": {
-      "1": "󰇩 ",
-      "2": "󰇩 ",
-      "3": "󰇩 ",
-      "4": "󰇩 ",
-      "5": "󰇩 ",
-      "6": "󰇩 ",
-      "urgent": "󰇩 ",
-      "active": "󰹻 ",
-      "default": "󰇩 "
+      "1": "󱤨 ",
+      "2": "󱤨 ",
+      "3": "󱤨 ",
+      "4": "󱤨 ",
+      "5": "󱤨 ",
+      "6": "󱤨 ",
+      "urgent": "󱤨 ",
+      "active": "󱤩 ",
+      "default": "󱤨 "
     }
   },
 
@@ -98,9 +97,6 @@
     }
   },
 
-  // "custom-cava-internal":{
-  //   "exec" : "sleep 1s && ~/.config/cava/cava-internal.sh"
-  // },
 
   "battery": {
     "states": {
@@ -112,7 +108,7 @@
     "format-charging": "{icons} {capacity}%",
     "format-plugged": "{icons} {capacity}%",
     "format-alt": "{time} {icon}",
-    "format-icons": ["", "", "", "", ""]
+    "format-icons": ["󰂐", "󰂆", "󰁻", "󰁼", "󰁽", "󰁾" ,"󰁿", "󰂀", "󰂐"]
   },
 
   "memory": {
@@ -134,16 +130,17 @@
     "path": "/mnt/Datos"
   },
   "network": {
-    // "interface": "wlp2*", // (Optional) To force the use of this interface
+    "interface": "wlp6s0", // (Optional) To force the use of this interface
     "format-disconnected": "disconnected",
-    "format-ethernet": "  {iframe}",
-    "format-linked": " {essid} (No IP)",
-    "format-wifi": "  {essid}",
+    "format-ethernet": "{iframe}",
+    "format-linked": " {essid} (No IP)",
+    "format-wifi": "󰤠 {essid}",
     "interval": 1,
-    "format-alt": "{ifname}:{essid} {ipaddr}/{cidr}",
-    "tooltip": "{ifname}:{essid} {ipaddr}/{cidr}",
+    "format-alt": "{ifname}:{essid}",
+	"tooltip-format-wifi": "{essid} {signalStrength}% {bandwidthUpBits} {bandwidthDownBits}",
+    // "tooltip-format": "{ipaddr} -> {bandwidth}",
     "on-click-right": "nm-connection-editor",
-    "on-click": "nm-applet"
+    "on-click": "alacritty -e ping -c 4 google.com"
   },
 
   "tray": {
@@ -154,19 +151,18 @@
   "backlight": {
     // "device": "acpi_video1",
     "format": "{percent}% {icon}",
-    "format-icons": ["", "󰃟", "󰃠"],
+    "format-icons": [" ", "󰃟 ", "󰃠 "],
     "on-scroll-up": "brightnessctl s 5%+",
     "on-scroll-down": "brightnessctl s 5%-"
   },
 
   "custom/redshift": {
     "format": "{icon}",
-    "format-icons": [" "],
+    "format-icons": [" "],
     "on-click": "~/.config/gamma/toggle_gamma.sh -s",
     "on-click-right": "~/.config/gamma/toggle_gamma.sh -e",
     "on-scroll-up": "~/.config/gamma/toggle_gamma.sh -scrollup",
     "on-scroll-down": "~/.config/gamma/toggle_gamma.sh -scrolldown"
-    // "on-click" : "wezterm -e redshift -l 20:20 -r -t 5500:4200"
   },
 
   "pulseaudio": {
@@ -175,8 +171,6 @@
     // "format-bluetooth": "{volume}% {icon} {format_source}",
     // "format-bluetooth-muted": " {icon} {format_source}",
     "format-muted": " {format_source}",
-    //"format-source": "{volume}% ",
-    //"format-source-muted": "",
     "format-source": "",
     "format-source-muted": "",
     "format-icons": {
@@ -189,9 +183,9 @@
       "default": ["", "", "󰕾"]
     },
     "on-click-right": "pavucontrol",
-    "on-click": "swayosd --output-volume mute-toggle",
-    "on-scroll-down": "swayosd  --output-volume raise",
-    "on-scroll-up": "swayosd --output-volume lower"
+    "on-click": "swayosd-client --output-volume mute-toggle",
+    "on-scroll-down": "swayosd-client  --output-volume raise",
+    "on-scroll-up": "swayosd-client --output-volume lower"
   },
   "pulseaudio#microphone": {
     "format": "{format_source}",
@@ -205,22 +199,18 @@
   },
 
   "temperature": {
-    // "thermal-zone": 1,
     "interval": 4,
-    //"hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
     "critical-threshold": 80,
-    // "format-critical": "  {temperatureC}°C",
-    "format-critical": "  {temperatureC}°C",
+    "format-critical": " {temperatureC}°C",
     "format": "{icon} {temperatureC}°C",
-    "format-icons": [""],
+    "format-icons": [" "],
     "max-length": 7,
     "min-length": 7,
     "on-click": "xsensors"
   },
   "custom/launcher": {
     "format": "",
-    // "on-click": "bash $HOME/.config/rofi/launcher.sh",
-    "on-click": "/home/spitfire/.config/rofi/launchers/type-6/launcher.sh"
+    "on-click": "/home/kenzo/.config/rofi/launchers/type-6/launcher.sh"
         
   }
 }
