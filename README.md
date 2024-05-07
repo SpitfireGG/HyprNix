@@ -23,10 +23,10 @@ SHOWCASES
 
 ## Installation:
 
-~~Hyprland~~
+~Hyprland~
 
 <b> Caution ⚡ </b><br>
-<p>If you want the whole hyprland configuration and make something as mine</p>
+<p>If you want to copy the whole config :</p>
 
 ```shell
 mv ~/.config ~/.config_bak
