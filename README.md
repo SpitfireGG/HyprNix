@@ -2,5 +2,8 @@
     <h1> 
         NVIM config
     </h1></br>
-    <b> refer to github.com/spitfiregg/nixvim.git for nixvim config </b>
+    <b>for nixvim config for nix users, refer to</b></br>
+    <a href="https://github.com/SpitfireGG/nixvim">
+        NixVim config
+    </a>
 </p>
