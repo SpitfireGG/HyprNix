@@ -16,12 +16,14 @@ SHOWCASES
         <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/btop.png", alt="picture of hyprland and nvim config">
     </br>
     </br>
-        <h3>Nvim configured in Lua</h3>                
+        <p align="center">Nvim configured in Lua</p>                
         <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/nvim.png", alt = "wtf">
-
-        <h3> Nvim configured in nix {nixvim} </h3>
+    </br>
+    </br>
+        <p align="center">Nvim configured in nix {nixvim} </p>
         <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/nvim1.png", alt="same">
         <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/nvim2.png", alt="same">
+    </br>
 </details>
 
 ## Installation:
