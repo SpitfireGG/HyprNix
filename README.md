@@ -4,8 +4,8 @@
     <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/home.png", alt = "wtf">
 </p>
 
-    📸 Screenshots
-    </p></summary>
+   <h2> 📸 Screenshots </h2>
+    </p>
         <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/spo.png", alt = "wtf">
         <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/firefox.png", alt = "wtf">
         <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/btop.png", alt="picture of hyprland and nvim config">
