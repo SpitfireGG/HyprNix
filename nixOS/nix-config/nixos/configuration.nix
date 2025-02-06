@@ -1,12 +1,9 @@
-{configs, inputs,  pkgs, ... }:
+{ config, inputs,  pkgs, ... }:
 
 {
   imports = [ ./hardware-configuration.nix ];
 
   boot = {
- kernelParams = [ "i915.force_probe=0a16" ];
- kernel.sysctl = { "vm.swappiness" = 10; };
- initrd.availableKernelModules = [ "hid_cherry" ];
  kernelPackages = pkgs.linuxPackages_latest;
     loader = {
       systemd-boot.enable = true;
@@ -21,27 +18,19 @@
 
   environment = {
     systemPackages = with pkgs; [
-
-
-        xdg-desktop-portal-hyprland
-
-      libsForQt5.qt5.qtquickcontrols2
+            xdg-desktop-portal-hyprland
+     libsForQt5.qt5.qtquickcontrols2
       libsForQt5.qt5.qtgraphicaleffects
+
+bat
 
       lxqt.lxqt-policykit
 
-      gnome.gnome-system-monitor
-
-      betterbird
-
-      vscode-fhs
-      audacity
-
+      gnome-system-monitor
       vim
 
       wayland
       unrar
-      swayosd
       brightnessctl
       xfce.thunar
 
@@ -50,8 +39,6 @@
 
       inotify-tools
       swww
-      fx
-      stockfish
       waybar
       font-manager
       btop
@@ -62,16 +49,12 @@
       psmisc
       udiskie
       libnotify
+            ghostty
 
       pulseaudio
-      glava
-      easyeffects
       vlc
-      pavucontrol
-      ncpamixer
       gammastep
 
-      bemenu
 
       neovim
       mpd
@@ -94,8 +77,6 @@
       spotify
       tree-sitter
       alacritty
-      terminal-colors
-      terminal-typeracer
 
       cliphist
       unzip
@@ -127,7 +108,6 @@
       darkstat
       freeradius
       dig
-      dstat
       iftop
       mtr-gui
       mtr
@@ -164,8 +144,8 @@
   };
 
   nix = {
- binaryCaches = [ "https://aseipp-nix-cache.global.ssl.fastly.net" ];
-    package = pkgs.nixFlakes;
+ settings.substituters = [ "https://aseipp-nix-cache.global.ssl.fastly.net" ];
+    package = pkgs.nixVersions.stable;
     settings = {
       max-jobs = 4;
       cores = 4;
@@ -192,6 +172,10 @@
       ];
     };
   };
+
+  i18n.defaultLocale = "en_US.UTF-8";
+
+
 
   programs = {
     # wireshark.enable = true;
@@ -222,9 +206,24 @@
     hardwareClockInLocalTime = true;
     timeZone = "Asia/Kathmandu";
   };
-  i18n.defaultLocale = "en_US.UTF-8";
+
+
+
 
   services = {
+	displayManager = {
+	    defaultSession = "hyprland";
+	    sddm.enable = true;
+	    sddm.theme = "${import ../home/conf/sddm.nix { inherit pkgs; }}";
+	};
+      libinput = {
+        enable = true;
+        touchpad = {
+          tapping = true;
+          middleEmulation = true;
+          naturalScrolling = true;
+        };
+      };
     fstrim.enable = true;
     gvfs.enable = true;
     dbus.enable = true;
@@ -237,37 +236,17 @@
     xserver = {
       dpi = 106;
       enable = true;
-      videoDrivers = [ "nouveau" ];
       xkb.layout = "us";
-      libinput = {
-        enable = true;
-        touchpad = {
-          tapping = true;
-          middleEmulation = true;
-          naturalScrolling = true;
-        };
-      };
-      displayManager.defaultSession = "hyprland";
-      displayManager.sddm.enable = true;
-      displayManager.sddm.theme =
-        "${import ../home-manager/conf/ui/sddm.nix { inherit pkgs; }}";
-      # desktopManager.gnome.enable = false;
-    };
-    openssh = {
-      enable = false;
-      ports = [ 4000 ];
-      settings.PasswordAuthentication = false;
-      banner = "/etc/ssh-banner";
-      settings = { PermitRootLogin = "yes"; };
-    };
-    pipewire = {
-      enable = true;
+
+  };
+	pipewire = {
+	enable = true;
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
       jack.enable = true;
     };
-  };
+};
 
 
   # powerManagement = { cpuFreqGovernor = "performance"; };
@@ -277,7 +256,7 @@
       isNormalUser = true;
       home = "/home/kenzo";
       shell = pkgs.fish;
-      description = "nixOs";
+      description = "nixos";
       extraGroups = [ "networkmanager" "wheel" "audio" "video" "wireshark" ];
     };
   };
@@ -289,6 +268,9 @@
           mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
         });
       })
+	(  final: prev :{
+	neovim = inputs.nixvim.packages.${prev.system}.default;
+	})
     ];
     config.pulseaudio = true;
     config.permittedInsecurePackages = [
@@ -310,21 +292,18 @@
     packages = with pkgs; [
       corefonts
       inconsolata
-
       source-code-pro
       dosis
       material-symbols
       rubik
       work-sans
-      nerdfonts
-    ];
-  };
+    nerd-fonts._0xproto
+    nerd-fonts.commit-mono
+    nerd-fonts.roboto-mono
 
-  sound.enable = true;
-  # hardware.pulseaudio.enable = true;
-# hardware.pulseaudio.support32Bit = true;
-  # hardware.pulseaudio.extraConfig = "load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1";
-  # hardware.pulseaudio.extraConfig = "unload-module module-suspend-on-idle";
+    ];
+/* ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues nerd-fonts); */
+  };
 
   /* hardware = {
        bluetooth.enable = true;
