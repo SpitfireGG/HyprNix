@@ -4,8 +4,6 @@
     <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/home.png", alt = "wtf">
 </p>
 
-<details>
-    <summary><p>
     📸 Screenshots
     </p></summary>
         <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/spo.png", alt = "wtf">
@@ -21,7 +19,6 @@
         <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/nvim1.png", alt="same">
         <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/nvim2.png", alt="same">
     </br>
-</details>
 
 ## Installation:
 
