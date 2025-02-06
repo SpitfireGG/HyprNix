@@ -53,3 +53,39 @@ mv ~/.config ~/.config_bak
 # Clone and install
 git clone https://github.com/SpitfireGG/HyprNix.git
 cd HyprNix && mv .configs .config && cp -r .config ~/
+
+
+
+
+
+##📥 Dependencies
+
+    Hyprland (≥ 0.30.0)
+
+    Neovim (≥ 0.9.0)
+
+    Nix Package Manager
+
+    GTK3+ Theming Support
+
+🚧 Roadmap
+
+    GTK Theme Refinement
+
+    C# LSP Configuration
+
+    Neovim Config Audit
+
+    Dynamic Workspace Modules
+
+    Performance Benchmarking
+
+🙌 Credits
+
+    Hyprland Community for WM configuration inspiration
+
+    Nixvim Maintainers for amazing Neovim integration
+
+    Special thanks to Original Config Authors (Add actual links)
+
+<div align="center"> <br> <i>Like this config? Star ⭐ the repo and consider <a href="https://ko-fi.com/">buying me a coffee</a>!</i> </div> ```
