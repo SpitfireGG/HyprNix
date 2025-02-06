@@ -4,9 +4,6 @@
     <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/home.png", alt = "wtf">
 </p>
 
-<h1 align='center'>
-SHOWCASES
-<h1> 
 <details>
     <summary><p>
     📸 Screenshots
