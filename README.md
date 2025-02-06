@@ -69,7 +69,7 @@
 
 - Nixvim Maintainers for amazing Neovim integration
 
-- Special thanks to Original Config Authors (Add actual links)
+- Special thanks to Original Config Authors - elyth, crystal 
 
 
 ## 🛠 Installation
