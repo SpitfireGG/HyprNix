@@ -1,55 +1,55 @@
-<h1 align='center'> ✨ Dotfyles<h1>
+<h1 align="center">✨ HyprNix Dotfiles</h1>
 <p align="center">
-    Hyprland configuration files <br><br>
-    <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/home.png", alt = "wtf">
+  <i>Aesthetic Hyprland + Neovim Configuration for NixOS</i>
 </p>
 
-   <h2> 📸 Screenshots </h2>
-    </p>
-        <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/spo.png", alt = "wtf">
-        <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/firefox.png", alt = "wtf">
-        <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/btop.png", alt="picture of hyprland and nvim config">
-    </br>
-    </br>
-        <p align="center">Nvim configured in Lua</p>                
-        <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/nvim.png", alt = "wtf">
-    </br>
-    </br>
-        <p align="center">Nvim configured in nix {nixvim} </p>
-        <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/nvim1.png", alt="same">
-        <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/nvim2.png", alt="same">
-    </br>
+<p align="center">
+  <img src="https://img.shields.io/badge/Hyprland-✓-9cf?logo=linux&logoColor=white" />
+  <img src="https://img.shields.io/badge/Neovim-0.9+-green?logo=neovim" />
+  <img src="https://img.shields.io/badge/License-MIT-blue.svg" />
+</p>
 
-## Installation:
+<div align="center">
+  <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/home.png" width="90%" alt="Desktop Preview">
+</div>
 
-~Hyprland~
+---
 
-<b> Caution ⚡ </b><br>
-<p>If you want to copy the whole config :</p>
+## 🌟 Features
+- **Hyprland** Tiling WM Configuration
+- **Neovim** Setup (Lua + Nixvim)
+- Custom Theming (GTK, Icons, Cursors)
+- Performance-Optimized Workflow
+- NixOS Integration
 
-```shell
+---
+
+## 📸 Showcase
+
+### Hyprland Desktop
+| Clean Layout | Workflow | System Monitoring |
+|--------------|----------|-------------------|
+| <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/spo.png" width="100%"> | <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/firefox.png" width="100%"> | <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/btop.png" width="100%"> |
+
+### Neovim Configurations
+**Lua Configuration**  
+<img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/nvim.png" width="80%" alt="Neovim Lua Config">
+
+**Nixvim Integration**  
+<div align="center">
+  <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/nvim1.png" width="45%">
+  <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/nvim2.png" width="45%">
+</div>
+
+---
+
+## 🛠 Installation
+
+### Hyprland Setup
+```bash
+# Backup existing config
 mv ~/.config ~/.config_bak
+
+# Clone and install
 git clone https://github.com/SpitfireGG/HyprNix.git
-cd HyprNix; mv .configs .config; cp -r .config ~/.config
-```
-
-<p>Or just [ cp -r <file/dir> <path> ] files and folders you want to copy </p>
-
-~~Nvim~~
-
-```shell
-mv ~/.config/nvim/ ~/.config/nvim_bak
-git clone https://github.com/SpitfireGG/HyprNix.git; cd HyprNix ;  mv nvim ~/.config/
-```
-## :TODO
-- Fix GTK theming 
-- Csharp lsp not configured properly
-- Recheck the nvim config cause it's been faulty lately
-- 1 star for this shit  ass config
-
-
-## Credit
-
-- i learned hyprland and nvim by modifying others config ,gradually got okay with hyprland and nvim
-- the nvim is a a modified config from the owner of the original one
-- thanks to the original owners :)
+cd HyprNix && mv .configs .config && cp -r .config ~/
