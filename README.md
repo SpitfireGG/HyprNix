@@ -10,7 +10,7 @@
 </p>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/home.png" width="90%" alt="Desktop Preview">
+  <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/prev/home.png" width="90%" alt="Desktop Preview">
 </div>
 
 ---
@@ -29,16 +29,16 @@
 ### Hyprland Desktop
 | Clean Layout | Workflow | System Monitoring |
 |--------------|----------|-------------------|
-| <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/spo.png" width="100%"> | <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/firefox.png" width="100%"> | <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/btop.png" width="100%"> |
+| <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/prev/spo.png" width="100%"> | <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/prev/firefox.png" width="100%"> | <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/prev/btop.png" width="100%"> |
 
 ### Neovim Configurations
 **Lua Configuration**  
-<img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/nvim.png" width="80%" alt="Neovim Lua Config">
+<img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/prev/nvim.png" width="80%" alt="Neovim Lua Config">
 
 **Nixvim Integration**  
 <div align="center">
-  <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/nvim1.png" width="45%">
-  <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/ewwwww/nvim2.png" width="45%">
+  <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/prev/nvim1.png" width="45%">
+  <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/prev/nvim2.png" width="45%">
 </div>
 
 ---
