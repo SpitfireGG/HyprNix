@@ -4,8 +4,10 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/release-23.11";
-    hm.url = "github:nix-community/home-manager/master";
+    hm = { 
+          url =   "github:nix-community/home-manager";
+          inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-colors.url = "github:misterio77/nix-colors";
     anyrun.url = "github:Kirottu/anyrun";
     ags.url = "github:ozwaldorf/ags";
@@ -15,10 +17,11 @@
   };
 
 
- outputs = { self, nixpkgs, nixpkgs-stable, hm, ... }@inputs: {
+ outputs = { self, nixpkgs,  hm, ... }@inputs: {
     nixosConfigurations = {
       kenzo = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+	specialArgs = { inherit inputs; };
         modules = [
           ./nixos/configuration.nix
         ];
@@ -26,12 +29,12 @@
     };
     homeConfigurations = {
       kenzo = hm.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs-stable {
+        pkgs = import nixpkgs {
           system = "x86_64-linux";
           config = { allowUnfree = true; };
         };
         extraSpecialArgs = { inherit inputs; };
-        modules = [ ./home-manager/home.nix ];
+        modules = [ ./home/home.nix ];
       };
     };
       kenzo = self.nixosConfigurations.kenzo.config.system.build.toplevel;
