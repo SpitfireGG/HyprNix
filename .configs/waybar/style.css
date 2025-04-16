@@ -1,0 +1,151 @@
+* {
+  font-family: "CommitMono Nerd Font", monospace;
+  font-size: 0.8rem;
+  padding: 0;
+  margin: 0;
+  transition: background-color 0.2s ease, padding 0.2s ease, border-color 0.2s ease; }
+
+window#waybar {
+  background: rgba(31, 31, 40, 0.7);
+  border: 1px solid rgba(139, 213, 202, 0.3);
+  border-radius: 8px;
+  color: #d6d2e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); }
+
+#workspaces {
+  margin: 4px 4px;
+  padding: 0  2px;
+  background: transparent; }
+
+#workspaces button {
+  margin: 1px  1px;
+  padding: 2px 8px;
+  color: #d6d2e0;
+  background: transparent;
+  border: 1px solid rgba(139, 213, 202, 0.3);
+  border-radius: 8px; }
+
+#workspaces button.active {
+  color: #f4d9e1;
+  background: linear-gradient(45deg, #8bd5ca, #5e81ac);
+  border-color: #8bd5ca; }
+
+#workspaces button:hover {
+  background: #8bd5ca;
+  color: #2e3440;
+  border-color: #eceff4; }
+
+#custom-cava-internal {
+  background: linear-gradient(45deg, #8bd5ca, #5e81ac);
+  color: #eceff4;
+  padding: 4px 12px;
+  margin: 4px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(139, 213, 202, 0.3);
+  font-family: "Hack Nerd Font", monospace;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); }
+
+#clock {
+  background: linear-gradient(45deg, #8bd5ca, #5e81ac);
+  color: #2e3440;
+  padding: 4px 12px;
+  margin: 4px 8px;
+  border-radius: 8px;
+  font-weight: bold;
+  border: 1px solid rgba(139, 213, 202, 0.3); }
+
+#custom-playerctl,
+#custom-playerlabel {
+  background: transparent;
+  color: #8bd5ca;
+  padding: 4px 8px;
+  margin: 4px 0; }
+
+#custom-playerlabel {
+  font-weight: bold;
+  margin-left: -4px; }
+
+#battery {
+  color: #f8a966;
+  padding: 4px 8px;
+  margin: 4px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(139, 213, 202, 0.3); }
+
+#battery.charging {
+  color: #9ece6a; }
+
+#battery.warning:not(.charging) {
+  background: #f7768e;
+  color: #2e3440;
+  border-color: #f7768e; }
+
+#backlight {
+  color: #8bd5ca;
+  margin: 4px 8px;
+  padding: 4px 8px;
+  border: 1px solid rgba(139, 213, 202, 0.3);
+  border-radius: 8px; }
+
+#custom-redshift {
+  color: #CBD18F;
+  margin: 4px 8px;
+  padding: 4px 8px;
+  border: 1px solid rgba(139, 213, 202, 0.3);
+  border-radius: 8px; }
+
+#network {
+  color: #dbc08a;
+  margin: 4px 8px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(139, 213, 202, 0.3); }
+
+#pulseaudio {
+  color: #8bd5ca;
+  margin: 4px 8px;
+  padding: 4px 8px;
+  border: 1px solid rgba(139, 213, 202, 0.3);
+  border-radius: 8px; }
+
+#pulseaudio.muted {
+  color: #928374;
+  border-color: #928374;
+  border: 1px solid rgba(139, 213, 202, 0.3); }
+
+#temperature {
+  color: #66cdaa;
+  margin: 4px 8px;
+  padding: 4px 8px;
+  border: 1px solid rgba(139, 213, 202, 0.3);
+  border-radius: 8px; }
+
+#custom-weather {
+  color: #8bd5ca;
+  padding: 4px 8px;
+  margin: 4px 8px;
+  border: 1px solid rgba(139, 213, 202, 0.3);
+  border-radius: 8px; }
+
+#tray {
+  background: transparent;
+  margin: 4px 12px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(139, 213, 202, 0.3); }
+
+#custom-launcher {
+  color: #8bd5ca;
+  font-size: 1.2rem;
+  padding: 4px 12px;
+  margin: 4px 8px;
+  border: 1px solid rgba(139, 213, 202, 0.3);
+  border-radius: 8px; }
+
+#custom-launcher:hover {
+  background: linear-gradient(45deg, #8bd5ca, #5e81ac);
+  color: #2e3440;
+  border-color: #eceff4;
+  padding: 5px 13px; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,183 @@
+$background: rgba(31, 31, 40, 0.7);
+$accent: #8bd5ca;
+$active: #f4d9e1;
+$warning: #f7768e;
+$urgent: #db4b4b;
+$text: #d6d2e0;
+$gradient: linear-gradient(45deg, #8bd5ca, #5e81ac);
+$shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+$radius: 8px;
+$border: 1px solid rgba(139, 213, 202, 0.3); // Subtle cyan border
+
+* {
+  font-family: "CommitMono Nerd Font", monospace;
+  font-size: 0.8rem;
+  padding: 0;
+  margin: 0;
+  transition: background-color 0.2s ease, padding 0.2s ease, border-color 0.2s ease;
+}
+
+window#waybar {
+  background: $background;
+  border: $border;
+  border-radius: $radius;
+  color: $text;
+  box-shadow: $shadow;
+}
+
+#workspaces {
+  margin: 4px 4px;
+  padding: 0  2px;
+  background: transparent;
+}
+
+#workspaces button {
+  margin : 1px  1px;
+  padding: 2px 8px;
+  color: $text;
+  background: transparent;
+  border: $border;
+  border-radius: $radius;
+}
+
+#workspaces button.active {
+  color: $active;
+  background: $gradient;
+  border-color: $accent;
+}
+
+#workspaces button:hover {
+  background: $accent;
+  color: #2e3440;
+  border-color: #eceff4;
+}
+
+#custom-cava-internal {
+  background: $gradient;
+  color: #eceff4;
+  padding: 4px 12px;
+  margin: 4px 8px;
+  border-radius: $radius;
+  border: $border;
+  font-family: "Hack Nerd Font", monospace;
+  box-shadow: $shadow;
+}
+
+#clock {
+  background: $gradient;
+  color: #2e3440;
+  padding: 4px 12px;
+  margin: 4px 8px;
+  border-radius: $radius;
+  font-weight: bold;
+  border: $border;
+}
+
+#custom-playerctl,
+#custom-playerlabel {
+  background: transparent;
+  color: $accent;
+  padding: 4px 8px;
+  margin: 4px 0;
+}
+
+#custom-playerlabel {
+  font-weight: bold;
+  margin-left: -4px;
+}
+
+#battery {
+  color: #f8a966;
+  padding: 4px 8px;
+  margin: 4px 8px;
+  border-radius: $radius;
+  border: $border;
+}
+
+#battery.charging {
+  color: #9ece6a;
+}
+
+#battery.warning:not(.charging) {
+  background: $warning;
+  color: #2e3440;
+  border-color: $warning;
+}
+
+#backlight {
+  color: $accent;
+  margin: 4px 8px;
+  padding: 4px 8px;
+  border: $border;
+  border-radius: $radius;
+}
+
+#custom-redshift {
+  color: #CBD18F;
+  margin: 4px 8px;
+  padding: 4px 8px;
+  border: $border;
+  border-radius: $radius;
+}
+
+#network {
+  color: #dbc08a;
+  margin: 4px 8px;
+  padding: 4px 8px;
+  border-radius: $radius;
+  border: $border;
+}
+
+#pulseaudio {
+  color: $accent;
+  margin: 4px 8px;
+  padding: 4px 8px;
+  border: $border;
+  border-radius: $radius;
+}
+
+#pulseaudio.muted {
+  color: #928374;
+  border-color: #928374;
+  border: $border;
+}
+
+#temperature {
+  color: #66cdaa;
+  margin: 4px 8px;
+  padding: 4px 8px;
+  border: $border;
+  border-radius: $radius;
+}
+
+#custom-weather {
+  color: $accent;
+  padding: 4px 8px;
+  margin: 4px 8px;
+  border: $border;
+  border-radius: $radius;
+}
+ 
+#tray{
+  background: transparent;
+  margin: 4px 12px;
+  padding: 4px 8px;
+  border-radius: $radius;
+  border: $border;
+}
+
+#custom-launcher {
+  color: $accent;
+  font-size: 1.2rem;
+  padding: 4px 12px;
+  margin: 4px 8px;
+  border: $border;
+  border-radius: $radius;
+}
+
+#custom-launcher:hover {
+  background: $gradient;
+  color: #2e3440;
+  border-color: #eceff4;
+  padding: 5px 13px; // Subtle size change
+}
