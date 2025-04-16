@@ -29,7 +29,7 @@
 ### Hyprland Desktop
 | Clean Layout | Workflow | System Monitoring |
 |--------------|----------|-------------------|
-| <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/prev/spo.png" width="100%"> | <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/prev/firefox.png" width="100%"> | <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/prev/btop.png" width="100%"> |
+| <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/prev//swappy-20250416_150958.png" width="100%"> | <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/prev/firefox.png" width="100%"> | <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/prev/btop.png" width="100%"> |
 
 ### Neovim Configurations
 **Lua Configuration**  
