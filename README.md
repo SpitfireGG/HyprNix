@@ -1,88 +1,118 @@
-<h1 align="center">✨ HyprNix Dotfiles</h1>
+<h1 align="center">✨ HyprNix Dotfiles ✨</h1>
 <p align="center">
-  <i>Aesthetic Hyprland + Neovim Configuration for NixOS</i>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Hyprland-✓-9cf?logo=linux&logoColor=white" />
-  <img src="https://img.shields.io/badge/Neovim-0.9+-green?logo=neovim" />
-  <img src="https://img.shields.io/badge/License-MIT-blue.svg" />
+  <i>Aesthetic and Declarative Hyprland + Neovim Configuration for NixOS</i>
 </p>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/prev/swappy-20250416_150958.png" width="90%" alt="Desktop Preview">
+
+  <img src="https://img.shields.io/badge/Hyprland-✓-9cf?logo=linux&logoColor=white" alt="Hyprland Badge"/>
+  <img src="https://img.shields.io/badge/Neovim-0.10%2B-green?logo=neovim" alt="Neovim Badge"/>
+  <img src="https://img.shields.io/badge/NixOS-Declarative-5277C3?logo=nixos&logoColor=white" alt="NixOS Badge"/>
+  <img src="https://img.shields.io/badge/Theme-Catppuccin-FAB387?style=flat&logo=catppuccin&logoColor=000000" alt="Catppuccin Badge"/>
+  <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License Badge"/>
+
+</div>
+
+<div align="center">
+  <img src="assets/firefox.png" width="90%" alt="Desktop Preview - Firefox Browsing">
 </div>
 
 ---
 
-## 🌟 Features
-- **Hyprland** Tiling WM Configuration
-- **Neovim** Setup (Lua + Nixvim)
-- Custom Theming (GTK, Icons, Cursors)
-- Performance-Optimized Workflow
-- NixOS Integration
+## ✨ Overview
+
+This repository contains my personal NixOS configuration, utilizing Nix flakes and Home Manager to create a reproducible and declarative desktop environment centered around the Hyprland Wayland compositor and Neovim. The goal is a clean, aesthetic, and highly functional setup managed entirely by Nix.
 
 ---
 
 ## 📸 Showcase
 
+Visual examples of the configuration.
+
 ### Hyprland Desktop
-| Clean Layout | Workflow | System Monitoring |
+| Layout Example | Workflow Example | System Monitoring |
 |--------------|----------|-------------------|
-| <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/prev/spo.png" width="100%"> | <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/prev/firefox.png" width="100%"> | <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/prev/btop.png" width="100%"> |
+| <img src="assets/spo.png" width="100%" alt="Hyprland with Spotify"> | <img src="assets/pipes.png" width="100%" alt="Hyprland with Terminals"> | <img src="assets/btop.png" width="100%" alt="Hyprland with Btop"> |
 
-### Neovim Configurations
-**Lua Configuration**  
-<img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/prev/nvim.png" width="80%" alt="Neovim Lua Config">
+### Neovim
+Configured declaratively using Nixvim, with advanced LSP support (including `nixd` for Nix files) and `nvim-cmp`.
 
-**Nixvim Integration**  
 <div align="center">
-  <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/prev/nvim1.png" width="45%">
-  <img src="https://raw.githubusercontent.com/SpitfireGG/HyprNix/main/prev/nvim2.png" width="45%">
+  <img src="assets/nixvim.png" width="45%" alt="Neovim LSP Hover">
+  <img src="assets/nixvim2.png" width="45%" alt="Neovim Completion Popup">
 </div>
 
 ---
 
-## 📥 Dependencies
+## 🛠 Installation & Usage
 
-- Hyprland (≥ 0.30.0)
+This configuration is managed by Nix flakes. It's not a traditional dotfile setup.
 
-- Neovim (≥ 0.9.0)
+1.  **Clone:** Clone this repository to a location like `~/.config/nixos`.
+2.  **Configure Flake:** Edit `flake.nix` to include your machine's hostname under `nixosConfigurations` and your username under `homeConfigurations`, pointing to the correct files (likely under `hosts/` and `users/`).
+3.  **Prepare Host:** Copy one of the example host directories (e.g., `hosts/dell`) to `hosts/<your-hostname>`. Update `hardware-configuration.nix` and `configuration.nix` for your specific machine and desired users.
+4.  **Prepare User:** Copy one of the example user directories (e.g., `users/kenzo`) to `users/<your-username>`. Update `home.nix` for your specific user needs.
+5.  **Apply:** From the repository root, run `sudo nixos-rebuild switch --flake .#<your-hostname>`.
 
-- Nix Package Manager
+---
 
-- GTK3+ Theming Support
+## 🧠 Configuration Structure
 
-## 🚧 Roadmap
-
-- GTK Theme Refinement
-
-- Neovim Config Audit
-
-- Dynamic Workspace Modules
-
-- Performance Benchmarking
-
-## 🙌 Credits
-
-- Hyprland Community for WM configuration inspiration
-
-- Nixvim Maintainers for amazing Neovim integration
-
-- Special thanks to Original Config Authors - elyth, crystal 
-
-
-## 🛠 Installation
-
-### Hyprland Setup
-```bash
-# Backup existing config
-mv ~/.config ~/.config_bak
-
-# Clone and install
-git clone https://github.com/SpitfireGG/HyprNix.git
-cd HyprNix && mv .configs .config && cp -r .config ~/
+The configuration is organized to be modular and easy to navigate:
 
 ```
+.
+├── assets/               # Screenshots and media for the README
+├── flake.lock            # Locked dependencies
+├── flake.nix             # The main entry point: defines inputs, hosts, and users.
+├── hosts/                # Contains configuration files for each *machine*.
+│   └── <hostname>/       # e.g., dell/, exodus/
+│       ├── configuration.nix  # Imports common modules, sets machine-specific options, and links to user configs.
+│       └── hardware-configuration.nix # Describes the machine's hardware (usually generated).
+├── modules/              # Reusable configuration chunks (the core of the setup).
+│   ├── nixos/            # Modules for the NixOS system layer (services, boot, networking, desktop setup).
+│   │   └── system/, desktop/, programs/, misc/... # Organized by concern.
+│   └── home-manager/     # Modules for the Home Manager user layer (programs, dotfiles, themes).
+│       └── programs/, user/...       # Organized by concern (e.g., nvim, hyprland, themes, colors).
+├── users/                # Contains configuration files for each *user profile*.
+│   └── <username>/       # e.g., kenzo/
+│       └── home.nix           # Imports common Home Manager modules and sets user-specific overrides.
+├── pkgs/                 # Definitions for custom packages.
+│   └── default.nix
+├── overlays/             # Overlays to modify existing packages from Nixpkgs.
+│   └── default.nix
+├── files/                # (Recommended Addition) Directory for static configuration files (if any) that aren't fully Nixified but managed by Home Manager/NixOS. e.g., scripts, static dotfiles, config snippets.
+└── README.md             # This file!
+```
 
-<div align="center"> <br> <i>Like this config? Star ⭐ the repo</i> </div> 
+**How it Works:**
+
+1.  **`flake.nix`** tells Nix where to find the configurations for your specific machines (`hosts/`) and users (`users/`).
+2.  A machine's **`hosts/<hostname>/configuration.nix`** pulls together:
+    *   Its specific hardware configuration.
+    *   Reusable **NixOS modules** from `modules/nixos/` (e.g., enabling systemd services, setting up networking, configuring the display manager).
+    *   The Home Manager system module, which in turn activates the configuration for a specific user profile defined in **`users/<username>/home.nix`**.
+3.  A user's **`users/<username>/home.nix`** pulls together:
+    *   Reusable **Home Manager modules** from `modules/home-manager/` (e.g., configuring specific programs like Neovim or Hyprland, managing dotfiles, applying themes).
+    *   Any user-specific overrides or settings not handled by the common modules.
+4.  **`modules/`** contain the actual configurations for programs and system features. These modules are designed to be imported by any host or user configuration, promoting reusability.
+5.  **`files/`** (if added) is where static files referenced by your modules (like a custom `init.lua` for Neovim if not using Nixvim exclusively, or config files for programs not fully supported by Home Manager modules) would live. They are then linked or included by the relevant modules.
+
+This structure separates machine-specific, user-specific, and reusable configuration logic, making the setup clear, maintainable, and easy to extend.
+
+---
+
+## ❤️ Credits & Inspiration
+
+*   Thanks to the NixOS, Home Manager, Hyprland, Neovim, and Nixvim communities.
+*   Inspired by other dotfile configurations.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+<div align="center"> <br> <i>If you like the config, consider starring the repo!</i> </div>
