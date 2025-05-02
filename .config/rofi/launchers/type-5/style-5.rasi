@@ -1,0 +1,158 @@
+configuration {
+	modi:                       "drun";
+    show-icons:                 true;
+    display-drun:               "";
+    display-run:                "";
+    display-filebrowser:        "";
+    display-window:             "";
+	drun-display-format:        "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
+	window-format:              "{w}   {c}   {t}";
+}
+
+/*****----- Global Properties -----*****/
+* {
+    font:                        "CommitMono Nerd Font 8";
+}
+
+/*****----- Main Window -----*****/
+window {
+    /* properties for window widget */
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    height:                     340px;
+    width:                       600px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+
+    /* properties for all widgets */
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border-radius:               1px;
+    border-color:                green;
+    cursor:                      "default";
+    background-color:             rgba(46, 52, 64, 0.9);
+
+    background-image:            url("~/.config/rofi/images/wp5954933-anime-4k-girl-wallpapers.jpg", width);
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    enabled:                     true;
+    spacing:                     20px;
+    padding:                     40px;
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview" ];
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+
+    enabled:                     true;
+    spacing:                     0px;
+    margin:                      0px 300px 0px 0px;
+    padding:                     09px;
+    border:                      1px;
+    border-radius:              0px;
+    border-color:                white;
+    background-color:    rgba(46, 52, 64, 0.9);
+    children:                    [ "textbox-prompt-colon", "entry" ];
+}
+
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    padding:                     8px 11px;
+    border-radius:               8px;
+    background-color:            transparent;
+    text-color:                  white;
+    str:                         "";
+}
+entry {
+    enabled:                     true;
+    padding:                     8px 12px;
+    border:                      0px;
+    background-color:            transparent;
+    text-color:                  white;
+    cursor:                      text;
+    placeholder:                 "Search...";
+    placeholder-color:           inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+/*****----- Listview -----*****/
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       8;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     10px;
+    margin:                      0px 200px 0px 0px;
+    padding:                     10px;
+    border:                      1px;
+    border-radius:               0px;
+    border-color:                white;
+    background-color:            rgba(46, 52, 64, 0.8);
+
+    cursor:                      "default";
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     5px 10px;
+    border:                      0px;
+    border-radius:               18px;
+    border-color:                white;
+    background-color:            transparent;
+    text-color:                  #162022;
+    cursor:                      pointer;
+}
+element selected.normal {
+    background-color:            rgba(59, 66, 82, 0.8);
+    text-color:                  white;
+}
+element-icon {
+    background-color:            transparent;
+    size:                        32px;
+    cursor:                      inherit;
+}
+element-text {
+    background-color:            inherit;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+/*****----- Message -----*****/
+error-message {
+    padding:                     20px;
+    background-color:            transparent;
+    text-color:                  white;
+}
+message {
+    padding:                     0px;
+    background-color:            inherit;
+    text-color:                  #FF9030;
+}
+textbox {
+    padding:                     0px;
+    border-radius:               0px;
+    background-color:            inherit;
+    text-color:                  inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
