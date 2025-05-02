@@ -1,10 +1,7 @@
 {
-  inputs,
-  config,
   pkgs,
-  lib,
   ...
-}@args:
+}:
 
 let
   username = "kenzo";
