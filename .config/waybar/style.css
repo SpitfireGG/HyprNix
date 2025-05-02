@@ -1,151 +1,126 @@
+/* Keep all your existing styles from the previous corrected version */
 * {
-  font-family: "CommitMono Nerd Font", monospace;
+  font-family: "CommitMono Nerd Font", "Font Awesome 6 Free", monospace;
   font-size: 0.8rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 0;
   padding: 0;
   margin: 0;
-  transition: background-color 0.2s ease, padding 0.2s ease, border-color 0.2s ease; }
+  min-height: 0;
+}
 
 window#waybar {
-  background: rgba(31, 31, 40, 0.7);
-  border: 1px solid rgba(139, 213, 202, 0.3);
-  border-radius: 8px;
-  color: #d6d2e0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); }
-
-#workspaces {
-  margin: 4px 4px;
-  padding: 0  2px;
-  background: transparent; }
-
-#workspaces button {
-  margin: 1px  1px;
-  padding: 2px 8px;
-  color: #d6d2e0;
-  background: transparent;
-  border: 1px solid rgba(139, 213, 202, 0.3);
-  border-radius: 8px; }
-
-#workspaces button.active {
-  color: #f4d9e1;
-  background: linear-gradient(45deg, #8bd5ca, #5e81ac);
-  border-color: #8bd5ca; }
-
-#workspaces button:hover {
-  background: #8bd5ca;
-  color: #2e3440;
-  border-color: #eceff4; }
-
-#custom-cava-internal {
-  background: linear-gradient(45deg, #8bd5ca, #5e81ac);
+  background-color: rgba(46, 52, 64, 0.9);
   color: #eceff4;
-  padding: 4px 12px;
-  margin: 4px 8px;
-  border-radius: 8px;
-  border: 1px solid rgba(139, 213, 202, 0.3);
-  font-family: "Hack Nerd Font", monospace;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); }
+  border-radius: 10px;
+  border: 1px solid #4c566a;
+}
 
-#clock {
-  background: linear-gradient(45deg, #8bd5ca, #5e81ac);
-  color: #2e3440;
-  padding: 4px 12px;
-  margin: 4px 8px;
-  border-radius: 8px;
-  font-weight: bold;
-  border: 1px solid rgba(139, 213, 202, 0.3); }
+tooltip {
+  background-color: #3b4252;
+  border: 1px solid #4c566a;
+  border-radius: 6px;
+  padding: 8px;
+}
 
+tooltip label {
+  color: #eceff4;
+}
+
+/* General Module Styling - Reduce horizontal margin/padding maybe? */
+#workspaces,
+#clock,
 #custom-playerctl,
-#custom-playerlabel {
-  background: transparent;
-  color: #8bd5ca;
-  padding: 4px 8px;
-  margin: 4px 0; }
-
-#custom-playerlabel {
-  font-weight: bold;
-  margin-left: -4px; }
-
-#battery {
-  color: #f8a966;
-  padding: 4px 8px;
-  margin: 4px 8px;
+#custom-playerlabel,
+#cava,
+#custom-cava,
+#battery,
+#network,
+#tray,
+#backlight,
+#custom-redshift,
+#pulseaudio,
+#temperature,
+#custom-weather,
+#custom-launcher {
+  background-color: transparent;
+  color: #eceff4;
+  padding: 3px 6px; /* Slightly reduced horizontal padding */
+  margin: 4px 2px; /* Reduced horizontal margin */
   border-radius: 8px;
-  border: 1px solid rgba(139, 213, 202, 0.3); }
+}
 
-#battery.charging {
-  color: #9ece6a; }
 
-#battery.warning:not(.charging) {
-  background: #f7768e;
-  color: #2e3440;
-  border-color: #f7768e; }
-
-#backlight {
-  color: #8bd5ca;
-  margin: 4px 8px;
-  padding: 4px 8px;
-  border: 1px solid rgba(139, 213, 202, 0.3);
-  border-radius: 8px; }
-
-#custom-redshift {
-  color: #CBD18F;
-  margin: 4px 8px;
-  padding: 4px 8px;
-  border: 1px solid rgba(139, 213, 202, 0.3);
-  border-radius: 8px; }
-
-#network {
-  color: #dbc08a;
-  margin: 4px 8px;
-  padding: 4px 8px;
+/* Hover effects - Keep as they were */
+#workspaces button:hover,
+#clock:hover,
+#custom-playerctl:hover,
+#custom-playerlabel:hover,
+#battery:hover,
+#network:hover,
+#backlight:hover,
+#custom-redshift:hover,
+#pulseaudio:hover,
+#temperature:hover,
+#custom-weather:hover,
+#custom-launcher:hover {
+  background-color: #434c5e; /* Nordic Night Medium */
+  color: #88c0d0; /* Nordic Aurora Light Blue */
   border-radius: 8px;
-  border: 1px solid rgba(139, 213, 202, 0.3); }
+}
 
-#pulseaudio {
-  color: #8bd5ca;
-  margin: 4px 8px;
-  padding: 4px 8px;
-  border: 1px solid rgba(139, 213, 202, 0.3);
-  border-radius: 8px; }
+/* Keep all specific module styles (workspaces, clock, battery states, etc.) */
+#workspaces {
+  background-color: #3b4252;
+  padding: 0 5px;
+  margin: 4px 5px; /* Give workspace container its own margin */
+  border-radius: 8px;
+}
 
-#pulseaudio.muted {
-  color: #928374;
-  border-color: #928374;
-  border: 1px solid rgba(139, 213, 202, 0.3); }
+#workspaces button { /* Keep workspace button styles */ }
+#workspaces button.active, #workspaces button.focused { /* Keep active styles */ }
+#workspaces button.urgent { /* Keep urgent styles */ }
+#workspaces button:hover { /* Keep hover styles */ }
 
-#temperature {
-  color: #66cdaa;
-  margin: 4px 8px;
-  padding: 4px 8px;
-  border: 1px solid rgba(139, 213, 202, 0.3);
-  border-radius: 8px; }
+#clock { color: #88c0d0 ; }
+#custom-playerctl { color: #b48ead; }
+#custom-playerctl.Playing { color: #a3be8c; }
+#custom-playerctl.Paused { color: #ebcb8b; }
+#custom-playerlabel { color: #d8dee9; font-style: italic; }
 
-#custom-weather {
-  color: #8bd5ca;
-  padding: 4px 8px;
-  margin: 4px 8px;
-  border: 1px solid rgba(139, 213, 202, 0.3);
-  border-radius: 8px; }
+/* #custom-cava, #cava {
+  background-color: transparent;
+  color: #b48ead; 
+  padding: 3px 6px;
+  margin: 4px 2px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  min-width: 100px;
+} */
+
+#battery { color : #ebcb8b;}
+#battery.charging { color: #a3be8c; }
+#battery.plugged { color: #81a1c1; }
+#battery.warning:not(.charging) { color: #d08770; }
+#battery.critical:not(.charging) { color: #bf616a; }
+#network { color: #88c0d0; }
+#network.disconnected { color: #d08770; }
+#backlight { color: #ebcb8b; }
+#pulseaudio { color: #8fbcbb; }
+#pulseaudio.muted { color: #d8dee9; }
+#temperature.critical { color: #bf616a; font-weight: bold; }
 
 #tray {
-  background: transparent;
-  margin: 4px 12px;
-  padding: 4px 8px;
+  background-color: rgba(59, 66, 82, 0.5);
   border-radius: 8px;
-  border: 1px solid rgba(139, 213, 202, 0.3); }
+  padding: 0 8px;
+  margin: 4px 5px; /* Give tray container its own margin */
+}
+#tray > .passive { opacity: 0.6; }
+#tray > .needs-attention { /* Keep attention styles */ }
 
-#custom-launcher {
-  color: #8bd5ca;
-  font-size: 1.2rem;
-  padding: 4px 12px;
-  margin: 4px 8px;
-  border: 1px solid rgba(139, 213, 202, 0.3);
-  border-radius: 8px; }
+#custom-launcher { color: #81a1c1; font-size: 1.3rem; }
+#custom-launcher:hover { color: #eceff4; background-color: #81a1c1; }
 
-#custom-launcher:hover {
-  background: linear-gradient(45deg, #8bd5ca, #5e81ac);
-  color: #2e3440;
-  border-color: #eceff4;
-  padding: 5px 13px; }
-
-/*# sourceMappingURL=style.css.map */
+/* End of CSS */

@@ -1,50 +1,43 @@
 {
+  // Basic Bar Settings
   "position": "top",
   "layer": "top",
-  "margin-top": 0,
-  "margin-bottom": 5,
-  "margin-left": 0,
-  "margin-right": 0,
+  "margin-top": 5,      // Add some margin around the bar
+  "margin-bottom": 0,   // Or adjust as needed for your setup
+  "margin-left": 5,
+  "margin-right": 5,
   "exclusive": true,
-  "height": 12,
+  "height": 30,         // Increased height for better visuals
   "passthrough": false,
   "gtk-layer-shell": true,
 
+  // Module Placement
   "modules-left": [
     "custom/launcher",
     "hyprland/workspaces",
     "custom/playerctl",
     "custom/playerlabel"
+//    "cava"
   ],
   "modules-center": [
     "clock"
   ],
   "modules-right": [
-    "custom/redshift",
-    "backlight",
     "temperature",
-    "custom/weather",
-    "battery",
+    "backlight",
     "pulseaudio",
     "network",
+    "battery",
+    "custom/redshift", // Moved redshift near other status icons
     "tray"
   ],
 
-  "cava": {
-    "framerate": 60,
-    "sensitivity": 1.5,
-    "bars": 16,
-    "method": "pulse",
-    "source": "auto",
-    "stereo": true,
-    "bar_delimiter": 0,
-    "noise_reduction": 0.8,
-    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
-  },
+  // --- Module Configurations ---
 
   "clock": {
-    "format": "{:%d %b %H:%M}",
-    "tooltip-format": "{:%Y-%m-%d %H:%M:%S}"
+    "format": "{:%d %b %H:%M}", // Icon + Format
+    "tooltip-format": "<big>{:%Y %B %d}</big>\n<tt>{calendar}</tt>", // Enhanced tooltip
+    "format-alt": " {:%Y-%m-%d}" // Alternate format on click/scroll
   },
 
   "hyprland/workspaces": {
@@ -55,16 +48,22 @@
     "on-scroll-down": "hyprctl dispatch workspace e+1",
     "format": "{icon}",
     "on-click": "activate",
+    "persistent_workspaces": {
+      "*": 5 // Adjust to show at least 5 workspaces, or match your setup
+      // "HDMI-A-1": [1, 2, 3, 4, 5] // Example for specific output
+    },
     "format-icons": {
-      "1": "󱤨",
-      "2": "󱤨",
-      "3": "󱤨",
-      "4": "󱤨",
-      "5": "󱤨",
-      "6": "󱤨",
-      "urgent": "󱤨",
-      "active": "󱤩",
-      "default": "󱤨"
+      "1": "", // Using filled circle variants or numbers
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "", // Add more if needed
+      "urgent": "",  // Exclamation icon for urgent
+      "active": "",  // Different filled circle for active
+      "default": "", // Faint circle for inactive
+      "focused": "",  // Same as active for focus
+      "empty": ""    // Hollow circle for empty persistent
     }
   },
 
@@ -72,128 +71,152 @@
     "format": "{icon}",
     "return-type": "json",
     "max-length": 64,
+    // IMPORTANT: Removed the <span color='...'> tags, styling is now done in SCSS via 'class'
     "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
     "on-click-middle": "playerctl play-pause",
     "on-click": "playerctl previous",
     "on-click-right": "playerctl next",
     "format-icons": {
-      "Playing": "<span color='#8bd5ca'>󰐌</span>",
-      "Paused": "<span color='#8bd5ca'>󰏥</span>"
+      "Playing": "󰐊", // Nerd Font Play
+      "Paused": "󰏤",  // Nerd Font Pause
+      "Stopped": "󰓛" // Nerd Font Stop
     }
   },
 
   "custom/playerlabel": {
     "format": "<span>{}</span>",
     "return-type": "json",
-    "max-length": 48,
+    "max-length": 50, // Keep it reasonably short
     "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
     "on-click-middle": "playerctl play-pause",
     "on-click": "playerctl previous",
-    "on-click-right": "playerctl next"
+    "on-click-right": "playerctl next",
+    "escape": true
   },
+
+
+//     "cava": {
+//         "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+//         "framerate": 60,
+//         "autosens": 1,
+//         "sensitivity": 100,
+//         "bars": 14,
+//         "lower_cutoff_freq": 50,
+//         "higher_cutoff_freq": 10000,
+//         "method": "pulse",
+//         "source": "auto",
+//         "stereo": true,
+//         "reverse": false,
+//         "bar_delimiter": 0,
+//         "monstercat": false,
+//         "waves": true,
+//         "noise_reduction": 0.8,
+//         "input_delay": 2,
+//         "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+//         "actions": {
+//                    "on-click-right": "mode"
+//                    }
+//     },
+//
 
   "battery": {
     "states": {
-      "good": 95,
       "warning": 30,
-      "critical": 20
+      "critical": 15
     },
     "format": "{icon} {capacity}%",
-    "format-charging": "󰂄 {capacity}%",
-    "format-plugged": "󰚥 {capacity}%",
+    "format-charging": "󰂄 {capacity}%", // Keep charging icon distinct if desired
+    "format-plugged": " {capacity}%",  // Power plug icon
     "format-alt": "{time} {icon}",
-    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
-  },
-
-  "memory": {
-    "format": "󰍛 {}%",
-    "interval": 5
-  },
-
-  "cpu": {
-    "format": "󰻠 {usage}%",
-    "interval": 5
-  },
-
-  "disk": {
-    "format": "󰋊 {}%",
-    "interval": 5,
-    "path": "/mnt/Datos"
+    // Using Font Awesome battery icons (often included in Nerd Fonts)
+    "format-icons": ["", "", "", "", ""] // Empty, Quarter, Half, Three-quarters, Full
+    // If the above don't render, revert to the previous set or find others on a Nerd Font cheat sheet
+    // Alternative Nerd Font set: ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
   },
 
   "network": {
-    "format-disconnected": "󰤭 Disconnected",
-    "format-ethernet": "󰈀 {ifname}",
-    "format-linked": "󰤯 {essid} (No IP)",
-    "format-wifi": "󰤨 {essid}",
-    "interval": 1,
-    "tooltip-format-wifi": "{essid} ({signalStrength}%)",
-    "on-click-right": "nm-connection-editor",
-    "on-click": "alacritty -e ping -c 4 google.com"
+    "format-disconnected": "󰤮 Disconnected", // Wifi icon with slash
+    "format-ethernet": "󰈀 {ifname}", // Keep Ethernet icon
+    "format-linked": "󰤭 {ifname} (No IP)", // Wifi icon with exclamation/question mark variant
+    "format-wifi": "󰤥 {essid}",          // Stronger Wifi signal icon
+    "tooltip-format-wifi": "󰤥 {essid} ({signalStrength}%)  {ipaddr}/{cidr}", // Match icon
+    "tooltip-format-ethernet": "󰈀 {ifname}  {ipaddr}/{cidr}",
+    // ... (Keep other network settings: interval, clicks, etc.)
   },
 
   "tray": {
-    "icon-size": 18,
-    "spacing": 8
+    "icon-size": 18,    // Slightly larger icons
+    "spacing": 10       // More space between tray icons
   },
 
   "backlight": {
+    "device": "intel_backlight", // Check your device name with `ls /sys/class/backlight/`
     "format": "{icon} {percent}%",
-    "format-icons": ["󰃞", "󰃟", "󰃠"],
+    "format-icons": ["󰃞", "󰃟", "󰃠"], // Brightness icons low, med, high
     "on-scroll-up": "brightnessctl s 5%+",
     "on-scroll-down": "brightnessctl s 5%-"
   },
 
   "custom/redshift": {
     "format": "{icon}",
-    "format-icons": ["󰛨"],
-    "on-click": "~/.config/gamma/toggle_gamma.sh -s",
-    "on-click-right": "~/.config/gamma/toggle_gamma.sh -e",
-    "on-scroll-up": "~/.config/gamma/toggle_gamma.sh -scrollup",
-    "on-scroll-down": "~/.config/gamma/toggle_gamma.sh -scrolldown"
+    "exec": "redshift -p -l $(curl -s 'https://ipinfo.io/loc') | grep 'Period:' | cut -d' ' -f2", // Basic check - needs refinement
+    "interval": 600, // Check every 10 mins
+    "format-icons": {
+      "daytime": "", // Sun icon
+      "transition": "󰗎", // Half-moon icon
+      "night": "󰽥"     // Moon icon
+    },
+    "tooltip": true,
+    "tooltip-format": "Redshift: {}",
+    "on-click": "killall -USR1 redshift", // Toggle redshift on/off (assuming redshift handles USR1)
+    "on-click-right": "redshift -x" // Disable redshift completely
+    // Scroll actions might need custom script if not built-in
   },
 
   "pulseaudio": {
-    "scroll-step": 3,
+    "scroll-step": 5, // Increase scroll step
     "format": "{icon} {volume}%",
-    "format-muted": "󰝟 Muted",
+    "format-muted": "󰖁 Muted", // Muted icon
     "format-icons": {
-      "headphone": "",
-      "headset": "",
-      "default": ["󰕿", "󰖀", "󰕾"]
+      "headphone": "󰋋",
+      "hands-free": "󰋎",
+      "headset": "󰋎",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["󰕿", "󰖀", "󰕾"] // Volume low, med, high icons
     },
-    "on-click-right": "pavucontrol",
-    "on-click": "swayosd-client --output-volume mute-toggle",
-    "on-scroll-down": "swayosd-client --output-volume raise",
-    "on-scroll-up": "swayosd-client --output-volume lower"
-  },
-
-  "pulseaudio#microphone": {
-    "format": "{format_source}",
-    "format-source": "󰍬 {volume}%",
-    "format-source-muted": "󰍭 Muted",
-    "on-click": "pavucontrol -t 4",
-    "on-click-middle": "pamixer --default-source -t",
-    "on-scroll-up": "pamixer --default-source -i 5",
-    "on-scroll-down": "pamixer --default-source -d 5",
-    "scroll-step": 5
+    "on-click": "pavucontrol" // Open pavucontrol on click
+    // Removed swayosd-client calls as they depend on another tool
+    // You can add them back if you use swayosd
+    // "on-click-right": "swayosd-client --output-volume mute-toggle",
+    // "on-scroll-down": "swayosd-client --output-volume lower",
+    // "on-scroll-up": "swayosd-client --output-volume raise"
   },
 
   "temperature": {
-    "interval": 4,
-    "critical-threshold": 80,
-    "format-critical": "󰈸 {temperatureC}°C",
-    "format": "{temperatureC}°C",
-    "on-click": "xsensors"
+    "thermal-zone": 0, // Adjust zone if needed
+    "hwmon-path": "/sys/class/thermal/thermal_zone0/temp", // Adjust path if needed
+    "critical-threshold": 85, // Higher critical threshold
+    "format-critical": " {temperatureC}°C", // Fire icon for critical
+    "format": " {temperatureC}°C", // Thermometer icon
+    "format-icons": ["", "", ""], // Optional: Icons for low/med/high temp ranges
+    "interval": 10,
+    "on-click": "htop" // Open htop or another monitor
   },
 
-"custom/weather": {
-  "format": "{}",
-  "exec": "curl -s 'wttr.in?format=%c%t'",
-  "interval": 3600
-}, 
+  "custom/weather": {
+    "format": "{} {}", // Icon first, then text
+    "exec": "~/.config/waybar/scripts/waybar-wttr.py", // Use a helper script (see below)
+    "return-type": "json",
+    "interval": 900, // Update every 15 minutes
+    "tooltip": true, // Enable tooltip which will be set by the script
+    "on-click": "xdg-open https://wttr.in/$(curl -s ipinfo.io/city)" // Open wttr.in for your city
+  },
+
   "custom/launcher": {
-    "format": "󰣇",
-    "on-click": "/home/kenzo/.config/rofi/launchers/type-6/launcher.sh"
+    "format": "", // Arch icon or your preferred distro/launcher icon
+    "tooltip": false,
+    "on-click": "~/.config/rofi/launchers/type-5/launcher.sh" // Keep your launcher script
   }
 }

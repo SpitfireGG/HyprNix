@@ -1,183 +1,236 @@
-$background: rgba(31, 31, 40, 0.7);
-$accent: #8bd5ca;
-$active: #f4d9e1;
-$warning: #f7768e;
-$urgent: #db4b4b;
-$text: #d6d2e0;
-$gradient: linear-gradient(45deg, #8bd5ca, #5e81ac);
-$shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-$radius: 8px;
-$border: 1px solid rgba(139, 213, 202, 0.3); // Subtle cyan border
+// --- (Keep the Nordic Color Palette Variables as defined before) ---
+$nordic-snow: #eceff4;
+$nordic-frost: #e5e9f0;
+$nordic-ice: #d8dee9;
+$nordic-night-darkest: #2e3440;
+$nordic-night-dark: #3b4252;
+$nordic-night-medium: #434c5e;
+$nordic-night-light: #4c566a;
+$nordic-aurora-green: #a3be8c;
+$nordic-aurora-yellow: #ebcb8b;
+$nordic-aurora-orange: #d08770;
+$nordic-aurora-red: #bf616a;
+$nordic-aurora-purple: #b48ead;
+$nordic-aurora-blue: #81a1c1;
+$nordic-aurora-lightblue: #88c0d0;
+$nordic-aurora-teal: #8fbcbb;
+$foreground: $nordic-snow;
+$foreground-alt: $nordic-ice;
 
+// --- General Settings ---
 * {
-  font-family: "CommitMono Nerd Font", monospace;
+  font-family: "CommitMono Nerd Font", "Font Awesome 6 Free", monospace;
   font-size: 0.8rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 0;
   padding: 0;
   margin: 0;
-  transition: background-color 0.2s ease, padding 0.2s ease, border-color 0.2s ease;
+  min-height: 0;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; // Added transform transition
 }
 
+// --- Waybar Window ---
 window#waybar {
-  background: $background;
-  border: $border;
-  border-radius: $radius;
-  color: $text;
-  box-shadow: $shadow;
+  background-color: rgba($nordic-night-darkest, 0.9); // Slightly less transparent
+  color: $foreground;
+  border-radius: 10px;
+  border: 1px solid $nordic-night-light;
 }
 
-#workspaces {
-  margin: 4px 4px;
-  padding: 0  2px;
-  background: transparent;
+// --- Tooltips ---
+tooltip {
+  background-color: $nordic-night-dark;
+  border: 1px solid $nordic-night-light;
+  border-radius: 6px;
+  padding: 8px;
+}
+tooltip label {
+  color: $foreground;
 }
 
-#workspaces button {
-  margin : 1px  1px;
-  padding: 2px 8px;
-  color: $text;
-  background: transparent;
-  border: $border;
-  border-radius: $radius;
-}
-
-#workspaces button.active {
-  color: $active;
-  background: $gradient;
-  border-color: $accent;
-}
-
-#workspaces button:hover {
-  background: $accent;
-  color: #2e3440;
-  border-color: #eceff4;
-}
-
-#custom-cava-internal {
-  background: $gradient;
-  color: #eceff4;
-  padding: 4px 12px;
-  margin: 4px 8px;
-  border-radius: $radius;
-  border: $border;
-  font-family: "Hack Nerd Font", monospace;
-  box-shadow: $shadow;
-}
-
-#clock {
-  background: $gradient;
-  color: #2e3440;
-  padding: 4px 12px;
-  margin: 4px 8px;
-  border-radius: $radius;
-  font-weight: bold;
-  border: $border;
-}
-
+// --- General Module Styling ---
+#workspaces, // Exclude workspaces from default module bg/padding if buttons handle it
+#clock,
 #custom-playerctl,
-#custom-playerlabel {
-  background: transparent;
-  color: $accent;
-  padding: 4px 8px;
-  margin: 4px 0;
-}
-
-#custom-playerlabel {
-  font-weight: bold;
-  margin-left: -4px;
-}
-
-#battery {
-  color: #f8a966;
-  padding: 4px 8px;
-  margin: 4px 8px;
-  border-radius: $radius;
-  border: $border;
-}
-
-#battery.charging {
-  color: #9ece6a;
-}
-
-#battery.warning:not(.charging) {
-  background: $warning;
-  color: #2e3440;
-  border-color: $warning;
-}
-
-#backlight {
-  color: $accent;
-  margin: 4px 8px;
-  padding: 4px 8px;
-  border: $border;
-  border-radius: $radius;
-}
-
-#custom-redshift {
-  color: #CBD18F;
-  margin: 4px 8px;
-  padding: 4px 8px;
-  border: $border;
-  border-radius: $radius;
-}
-
-#network {
-  color: #dbc08a;
-  margin: 4px 8px;
-  padding: 4px 8px;
-  border-radius: $radius;
-  border: $border;
-}
-
-#pulseaudio {
-  color: $accent;
-  margin: 4px 8px;
-  padding: 4px 8px;
-  border: $border;
-  border-radius: $radius;
-}
-
-#pulseaudio.muted {
-  color: #928374;
-  border-color: #928374;
-  border: $border;
-}
-
-#temperature {
-  color: #66cdaa;
-  margin: 4px 8px;
-  padding: 4px 8px;
-  border: $border;
-  border-radius: $radius;
-}
-
-#custom-weather {
-  color: $accent;
-  padding: 4px 8px;
-  margin: 4px 8px;
-  border: $border;
-  border-radius: $radius;
-}
- 
-#tray{
-  background: transparent;
-  margin: 4px 12px;
-  padding: 4px 8px;
-  border-radius: $radius;
-  border: $border;
-}
-
+#custom-playerlabel,
+#cava,
+#battery,
+#network,
+#tray,
+#backlight,
+#custom-redshift,
+#pulseaudio,
+#temperature,
+#custom-weather,
 #custom-launcher {
-  color: $accent;
-  font-size: 1.2rem;
-  padding: 4px 12px;
-  margin: 4px 8px;
-  border: $border;
-  border-radius: $radius;
+  // background-color: $nordic-night-medium; // Let's make modules transparent now
+  background-color: transparent;
+  color: $foreground;
+  padding: 3px 8px;   // Adjust padding slightly if needed
+  margin: 4px 0px;    // Vertical margin, horizontal margin handled by separator
+  border-radius: 8px; // Keep rounded corners for hover effect maybe? Or remove if separators look better without
 }
 
-#custom-launcher:hover {
-  background: $gradient;
-  color: #2e3440;
-  border-color: #eceff4;
-  padding: 5px 13px; // Subtle size change
+// --- Add the Slanted Separator ---
+// Target all direct children modules within the left/center/right containers,
+// but only add the separator *before* modules that follow another module.
+#modules-left > *,
+#modules-center > *,
+#modules-right > * {
+    margin-left: 3px; // Add small gap before the separator will appear
+    margin-right: 3px; // Add small gap after the module content
 }
+
+#modules-left > * + *,
+#modules-center > * + *,
+#modules-right > * + * {
+  margin-left: 0; // Remove default margin for modules preceded by a separator
+
+  &::before {
+    content: "/"; // Or use "\\" for backslash: content: "\\"; Remember to escape backslash in CSS
+    color: $nordic-night-light; // Use a dimmer color for the separator
+    font-size: 1.2em; // Make separator slightly larger
+    font-weight: bold; // Keep it bold
+    margin-right: 6px; // Space between separator and the module content that follows it
+    margin-left: 6px; // Space between the preceding module and the separator
+    // Adjust vertical position if needed (usually okay with font alignment)
+    // line-height: 1;
+    // vertical-align: middle;
+  }
+}
+
+
+// --- Module Hover Effect (Enhanced) ---
+#workspaces button:hover, // Keep workspace button hover specific
+#clock:hover,
+#custom-playerctl:hover,
+#custom-playerlabel:hover,
+#battery:hover,
+#network:hover,
+#backlight:hover,
+#custom-redshift:hover,
+#pulseaudio:hover,
+#temperature:hover,
+#custom-weather:hover,
+#custom-launcher:hover {
+  background-color: $nordic-night-medium; // Give background ON HOVER only
+  color: $nordic-aurora-lightblue;
+  transform: scale(1.03); // Slight scale effect on hover
+  border-radius: 8px; // Apply radius on hover if not applied by default
+}
+
+// --- Specific Module Styling (Adjustments) ---
+
+// Workspaces (keep its distinct background)
+#workspaces {
+  background-color: $nordic-night-dark;
+  padding: 0 5px;
+  margin: 4px 5px; // Restore some horizontal margin for the container
+  border-radius: 8px;
+}
+// Reset margins for buttons inside workspace container if needed
+#workspaces button {
+  padding: 2px 6px;
+  margin: 2px 2px;
+  color: $foreground-alt;
+  background-color: transparent;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+#workspaces button.active,
+#workspaces button.focused {
+  background-color: $nordic-aurora-blue;
+  color: $nordic-night-darkest;
+  font-size: 1.1rem;
+}
+#workspaces button.urgent {
+  background-color: $nordic-aurora-red;
+  color: $nordic-snow;
+}
+#workspaces button:hover {
+    background-color: $nordic-night-light;
+    color: $nordic-aurora-lightblue;
+    border-radius: 6px;
+    transform: scale(1.05); // Add slight scale here too
+}
+
+// Clock (can keep its background or make transparent too)
+#clock {
+  // background-color: $nordic-night-dark; // Optional: Keep background
+  color: $nordic-aurora-lightblue;
+}
+
+// Player Controls - Make them stand out a bit more maybe
+#custom-playerctl {
+  color: $nordic-aurora-purple;
+  // Removed specific padding/margin overrides - let general separator handle it
+}
+#custom-playerctl.Playing { color: $nordic-aurora-green; }
+#custom-playerctl.Paused { color: $nordic-aurora-yellow; }
+
+#custom-playerlabel {
+  color: $foreground-alt; // Dimmer color for the label
+  font-style: italic;    // Add italic style
+  max-width: 180px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+// Battery - rely on icons and state colors
+#battery.charging { color: $nordic-aurora-green; }
+#battery.plugged { color: $nordic-aurora-blue; } // Color for plugged state
+#battery.warning:not(.charging) { color: $nordic-aurora-orange; }
+#battery.critical:not(.charging) {
+  color: $nordic-aurora-red;
+  // Optional: Add background flash or something more drastic?
+  // animation: blink 1s ease-in-out infinite;
+}
+
+// Network
+#network { color: $nordic-aurora-lightblue; }
+#network.disconnected { color: $nordic-aurora-orange; }
+
+// Backlight
+#backlight { color: $nordic-aurora-yellow; }
+
+// Pulseaudio
+#pulseaudio { color: $nordic-aurora-teal; }
+#pulseaudio.muted { color: $foreground-alt; }
+
+// Temperature
+#temperature.critical { color: $nordic-aurora-red; font-weight: bold; }
+
+// Tray (maybe give it a subtle background box)
+#tray {
+  background-color: rgba($nordic-night-dark, 0.5); // Semi-transparent tray bg
+  border-radius: 8px;
+  padding: 0 8px;
+  margin: 4px 5px; // Restore horizontal margin for tray container
+}
+#tray > .passive { opacity: 0.6; }
+#tray > .needs-attention {
+    background-color: $nordic-aurora-orange;
+    color: $nordic-night-darkest; // Ensure text is readable
+    border-radius: 4px;
+    margin: 0 2px;
+    padding: 0 3px;
+}
+
+// Launcher
+#custom-launcher {
+  color: $nordic-aurora-blue;
+  font-size: 1.3rem;
+}
+#custom-launcher:hover {
+    color: $nordic-snow;
+    background-color: $nordic-aurora-blue; // Keep hover distinct
+}
+
+
+// Optional Blinking Animation for Critical Battery
+// @keyframes blink {
+//   0%, 100% { background-color: transparent; color: $nordic-aurora-red; }
+//   50% { background-color: $nordic-aurora-red; color: $nordic-snow; }
+// }
