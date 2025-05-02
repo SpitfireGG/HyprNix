@@ -10,19 +10,41 @@ export PATH="$HOME/go/bin:$PATH"
 set -x GOPATH $HOME/go
 set -x PATH $PATH /usr/bin/cargo
 
-set -x MANPAGER "bat -l man"
-#alias nvim '/nix/store/xvvamk9nz090hjv0qf12g78jwvkap22l-neovim-0.9.5/bin/nvim'
+
 
 
 
 
 #-----------aliases----------------
-alias nvim '/home/kenzo/.config/nvim/config/result/bin/nvim'
+
+
+
+
+
+
+#Syntax highlighting for manpage - better understanding :)
+# can also be achieved by using Pager 
+
+function shit
+    man $argv | bat --plain --language=man
+end
+
+
+function copy
+  find $argv[1] -type f -name $argv[2] | tee /dev/tty | xclip  -selection clipboard 
+end 
+
+
+
+
+
+alias nvim '/home/kenzo/.config/nixvim/result/bin/nvim'
 alias zz ranger
 alias nv nvim
 alias rmi 'rm -i'
 alias fs 'source ~/.config/fish/config.fish'
-alias bb '../../'
+alias bb 'cd ../../'
+alias fuck 'nvim $(fzf --preview="bat {}")'
 
 #--------------git aliases----------------
 alias gst 'git status .'
