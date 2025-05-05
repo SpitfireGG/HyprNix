@@ -9,7 +9,10 @@
     };
     ags.url = "github:ozwaldorf/ags";
     spicetify-nix.url = "github:the-argus/spicetify-nix";
-    nixvim.url = "github:elythh/nixvim";
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
