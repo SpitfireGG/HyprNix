@@ -1,11 +1,21 @@
 { pkgs, ... }:
 {
   services = {
-
     displayManager = {
       defaultSession = "hyprland";
-      sddm.enable = true;
-      sddm.theme = "${import ../home/conf/sddm.nix { inherit pkgs; }}";
+      sddm = {
+        enable = false; 
+        wayland.enable = true; 
+        enableHidpi = true;
+        autoNumlock = false; 
+        wayland.compositorCommand = "${pkgs.hyprland}/bin/Hyprland";
+        theme = "sddm-astronaut-theme";
+        settings = {
+          General = {
+            Numlock = "none";
+          };
+        };
+      }; 
     };
     blueman.enable = true;
     libinput = {
@@ -24,14 +34,10 @@
     dbus.enable = true;
     udisks2.enable = true;
     tlp.enable = false;
-    # upower.enable = true;
-    # power-profiles-daemon.enable = false;
-    # journald.extraConfig = "MaxRetentionSec=1week";
     xserver = {
       dpi = 106;
       enable = true;
       xkb.layout = "us";
-
     };
     pipewire = {
       enable = true;
@@ -41,4 +47,17 @@
       jack.enable = true;
     };
   };
+
+  # install the custom theme
+  environment.systemPackages = [
+    (import ../../../kenzo/conf/ui/sddm.nix { inherit pkgs; })
+  ];
+
+  # configure sddm to use black_hole 
+  environment.etc."sddm.conf.d/astronaut-theme.conf".text = ''
+    [Theme]
+    Current=sddm-astronaut-theme
+    ThemeDir=/run/current-system/sw/share/sddm/themes/sddm-astronaut-theme/
+    ConfigFile=/run/current-system/sw/share/sddm/themes/sddm-astronaut-theme/Themes/japanese_aesthetic.conf
+  '';
 }
