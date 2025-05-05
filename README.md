@@ -14,7 +14,7 @@
 </div>
 
 <div align="center">
-  <img src="assets/firefox.png" width="90%" alt="Desktop Preview - Firefox Browsing">
+  <img src="assets/combined.png" width="90%" alt="Desktop Preview - Firefox Browsing">
 </div>
 
 ---
@@ -30,16 +30,16 @@ This repository contains my personal NixOS configuration, utilizing Nix flakes a
 Visual examples of the configuration.
 
 ### Hyprland Desktop
-| Layout Example | Workflow Example | System Monitoring |
+| Home | Terminal with tmux | Browsing  |
 |--------------|----------|-------------------|
-| <img src="assets/spo.png" width="100%" alt="Hyprland with Spotify"> | <img src="assets/pipes.png" width="100%" alt="Hyprland with Terminals"> | <img src="assets/btop.png" width="100%" alt="Hyprland with Btop"> |
+| <img src="assets/home.png" width="100%" alt="Hyprland with Spotify"> | <img src="assets/pipes.png" width="100%" alt="Hyprland with Terminals"> | <img src="assets/firefox.png" width="100%" alt="Hyprland with firefox"> |
 
 ### Neovim
 Configured declaratively using Nixvim, with advanced LSP support (including `nixd` for Nix files) and `nvim-cmp`.
 
 <div align="center">
   <img src="assets/nixvim.png" width="45%" alt="Neovim LSP Hover">
-  <img src="assets/nixvim2.png" width="45%" alt="Neovim Completion Popup">
+  <img src="assets/lsp.png" width="45%" alt="Neovim Completion Popup">
 </div>
 
 ---
@@ -97,8 +97,6 @@ The configuration is organized to be modular and easy to navigate:
     *   Any user-specific overrides or settings not handled by the common modules.
 4.  **`modules/`** contain the actual configurations for programs and system features. These modules are designed to be imported by any host or user configuration, promoting reusability.
 5.  **`files/`** (if added) is where static files referenced by your modules (like a custom `init.lua` for Neovim if not using Nixvim exclusively, or config files for programs not fully supported by Home Manager modules) would live. They are then linked or included by the relevant modules.
-
-This structure separates machine-specific, user-specific, and reusable configuration logic, making the setup clear, maintainable, and easy to extend.
 
 ---
 
