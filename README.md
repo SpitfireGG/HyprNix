@@ -9,12 +9,11 @@
   <img src="https://img.shields.io/badge/Neovim-0.10%2B-green?logo=neovim" alt="Neovim Badge"/>
   <img src="https://img.shields.io/badge/NixOS-Declarative-5277C3?logo=nixos&logoColor=white" alt="NixOS Badge"/>
   <img src="https://img.shields.io/badge/Theme-Catppuccin-FAB387?style=flat&logo=catppuccin&logoColor=000000" alt="Catppuccin Badge"/>
-  <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License Badge"/>
 
 </div>
 
 <div align="center">
-  <img src="assets/combined.png" width="90%" alt="Desktop Preview - Firefox Browsing">
+  <img src="assets/combined.png" width="100%" alt="Desktop Preview - Firefox Browsing">
 </div>
 
 ---
@@ -85,7 +84,7 @@ The configuration is organized to be modular and easy to navigate:
 └── README.md             # This file!
 ```
 
-**NOTE** : I haven't written hyprland and other utilities configuration through nix, not all the people use nixos as dailky drivers, i have them inside the .config folder making it accessible for all types of users to use the configuration
+**NOTE** : I haven't written hyprland and other utilities configuration through nix, not all the people use nixos as daily drivers, I have configured them inside the .config folder like any other distros, to make it accessible for all types of users to use the configuration.
 
 **How it Works:**
 
@@ -106,12 +105,6 @@ The configuration is organized to be modular and easy to navigate:
 
 *   Thanks to the NixOS, Home Manager, Hyprland, Neovim, and Nixvim communities.
 *   Inspired by other dotfile configurations.
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
