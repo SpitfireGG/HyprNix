@@ -85,6 +85,8 @@ The configuration is organized to be modular and easy to navigate:
 └── README.md             # This file!
 ```
 
+**NOTE** : I haven't written hyprland and other utilities configuration through nix, not all the people use nixos as dailky drivers, i have them inside the .config folder making it accessible for all types of users to use the configuration
+
 **How it Works:**
 
 1.  **`flake.nix`** tells Nix where to find the configurations for your specific machines (`hosts/`) and users (`users/`).
