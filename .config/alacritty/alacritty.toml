@@ -1,0 +1,133 @@
+
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ScrollPageUp"
+key = "PageUp"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollPageDown"
+key = "PageDown"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollToTop"
+key = "Home"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollToBottom"
+key = "End"
+mode = "~Alt"
+mods = "Shift"
+
+
+[cursor.style]
+blinking = "Off"
+shape = "Block"
+
+[font]
+size = 10.5
+
+[font.offset]
+x = 1
+y = 1
+
+[font.normal]
+family = "Maple Mono NF"
+style = "Regular"
+
+[font.bold]
+family = "Maple Mono NF"
+style = "Bold"
+
+[font.italic]
+family = "Maple Mono NF"
+style = "Italic"
+
+[scrolling]
+history = 10_000
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+
+[window]
+decorations = "none"
+opacity = 0.8
+
+
+[window.padding]
+x=0
+y=0
+
+# Kanagawa Wave Alacritty Colors
+
+# Alacritty configuration file in TOML format
+
+[colors]
+transparent_background_colors = true
+
+[colors.primary]
+background = "#1F1F28"
+foreground = "#DCD7BA"
+
+[colors.cursor]
+text = "#DCD7BA"
+cursor = "#7E9CD8"
+
+[colors.selection]
+text = "#C8C093"
+background = "#2A2A37"
+
+[colors.normal]
+black = "#1F1F28"
+red = "#C34043"
+green = "#98BB6C"
+yellow = "#DCA561"
+blue = "#7E9CD8"
+magenta = "#957FB8"
+cyan = "#7FB4CA"
+white = "#DCD7BA"
+
+[colors.bright]
+black = "#727169"
+red = "#C34043"
+green = "#98BB6C"
+yellow = "#DCA561"
+blue = "#7E9CD8"
+magenta = "#957FB8"
+cyan = "#7FB4CA"
+white = "#938AA9"
+
+
+[general] 
+live_config_reload = true

@@ -1,4 +1,3 @@
-/* Keep all your existing styles from the previous corrected version */
 * {
   font-family: "CommitMono Nerd Font", "Font Awesome 6 Free", monospace;
   font-size: 0.8rem;
@@ -11,24 +10,23 @@
 }
 
 window#waybar {
-  background-color: rgba(46, 52, 64, 0.9);
-  color: #eceff4;
+  background-color: rgba(42, 42, 55, 0.9); /* #2A2A37 with 90% opacity */
+  color: #DCD7BA; /* #DCD7BA */
   border-radius: 10px;
-  border: 1px solid #4c566a;
+  border: 1px solid #727169; /* #727169 */
 }
 
 tooltip {
-  background-color: #3b4252;
-  border: 1px solid #4c566a;
+  background-color: #363646; /* #363646 */
+  border: 1px solid #727169; /* #727169 */
   border-radius: 6px;
   padding: 8px;
 }
 
 tooltip label {
-  color: #eceff4;
+  color: #DCD7BA; /* #DCD7BA */
 }
 
-/* General Module Styling - Reduce horizontal margin/padding maybe? */
 #workspaces,
 #clock,
 #custom-playerctl,
@@ -45,14 +43,12 @@ tooltip label {
 #custom-weather,
 #custom-launcher {
   background-color: transparent;
-  color: #eceff4;
-  padding: 3px 6px; /* Slightly reduced horizontal padding */
-  margin: 4px 2px; /* Reduced horizontal margin */
+  color: #DCD7BA; /* #DCD7BA */
+  padding: 3px 6px;
+  margin: 4px 2px;
   border-radius: 8px;
 }
 
-
-/* Hover effects - Keep as they were */
 #workspaces button:hover,
 #clock:hover,
 #custom-playerctl:hover,
@@ -65,62 +61,73 @@ tooltip label {
 #temperature:hover,
 #custom-weather:hover,
 #custom-launcher:hover {
-  background-color: #434c5e; /* Nordic Night Medium */
-  color: #88c0d0; /* Nordic Aurora Light Blue */
+  background-color: #223249; /* #223249 */
+  color: #7E9CD8; /* #7E9CD8 */
   border-radius: 8px;
 }
 
-/* Keep all specific module styles (workspaces, clock, battery states, etc.) */
 #workspaces {
-  background-color: #3b4252;
+  background-color: #2A2A37; /* #2A2A37 */
   padding: 0 5px;
-  margin: 4px 5px; /* Give workspace container its own margin */
+  margin: 4px 5px;
   border-radius: 8px;
 }
 
-#workspaces button { /* Keep workspace button styles */ }
-#workspaces button.active, #workspaces button.focused { /* Keep active styles */ }
-#workspaces button.urgent { /* Keep urgent styles */ }
-#workspaces button:hover { /* Keep hover styles */ }
-
-#clock { color: #88c0d0 ; }
-#custom-playerctl { color: #b48ead; }
-#custom-playerctl.Playing { color: #a3be8c; }
-#custom-playerctl.Paused { color: #ebcb8b; }
-#custom-playerlabel { color: #d8dee9; font-style: italic; }
-
-/* #custom-cava, #cava {
+#workspaces button {
+  padding: 0 5px;
   background-color: transparent;
-  color: #b48ead; 
-  padding: 3px 6px;
-  margin: 4px 2px;
-  border-radius: 8px;
-  font-size: 0.8rem;
-  min-width: 100px;
-} */
+  color: #C8C093; /* #C8C093 */
+  border-radius: 0;
+}
 
-#battery { color : #ebcb8b;}
-#battery.charging { color: #a3be8c; }
-#battery.plugged { color: #81a1c1; }
-#battery.warning:not(.charging) { color: #d08770; }
-#battery.critical:not(.charging) { color: #bf616a; }
-#network { color: #88c0d0; }
-#network.disconnected { color: #d08770; }
-#backlight { color: #ebcb8b; }
-#pulseaudio { color: #8fbcbb; }
-#pulseaudio.muted { color: #d8dee9; }
-#temperature.critical { color: #bf616a; font-weight: bold; }
+#workspaces button.active {
+  color: #7E9CD8; /* #7E9CD8 */
+  background-color: rgba(34, 50, 73, 0.5); /* #223249 with 50% opacity */
+}
+
+#workspaces button.active.focused {
+  color: #7E9CD8; /* #7E9CD8 */
+  background-color: #223249; /* #223249 */
+}
+
+#workspaces button.urgent {
+  color: #C34043; /* #C34043 */
+}
+
+#workspaces button:hover {
+  background-color: #223249; /* #223249 */
+  color: #7E9CD8; /* #7E9CD8 */
+}
+
+#clock { color: #7E9CD8; } /* #7E9CD8 */
+#custom-playerctl { color: #957FB8; } /* #957FB8 */
+#custom-playerctl.Playing { color: #98BB6C; } /* #98BB6C */
+#custom-playerctl.Paused { color: #DCA561; } /* #DCA561 */
+#custom-playerlabel { color: #C8C093; font-style: italic; } /* #C8C093 */
+
+#battery { color : #DCA561;} /* #DCA561 */
+#battery.charging { color: #98BB6C; } /* #98BB6C */
+#battery.plugged { color: #7E9CD8; } /* #7E9CD8 */
+#battery.warning:not(.charging) { color: #FFA066; } /* #FFA066 */
+#battery.critical:not(.charging) { color: #C34043; font-weight: bold; } /* #C34043 */
+#network { color: #7E9CD8; } /* #7E9CD8 */
+#network.disconnected { color: #FFA066; } /* #FFA066 */
+#backlight { color: #DCA561; } /* #DCA561 */
+#pulseaudio { color: #7FB4CA; } /* #7FB4CA */
+#pulseaudio.muted { color: #C8C093; } /* #C8C093 */
+#temperature.critical { color: #C34043; } /* #C34043 */
 
 #tray {
-  background-color: rgba(59, 66, 82, 0.5);
+  background-color: rgba(42, 42, 55, 0.5); /* #2A2A37 with 50% opacity */
   border-radius: 8px;
   padding: 0 8px;
-  margin: 4px 5px; /* Give tray container its own margin */
+  margin: 4px 5px;
 }
 #tray > .passive { opacity: 0.6; }
-#tray > .needs-attention { /* Keep attention styles */ }
+#tray > .needs-attention {
+  background-color: #C34043; /* #C34043 */
+  color: #938AA9; /* #938AA9 */
+}
 
-#custom-launcher { color: #81a1c1; font-size: 1.3rem; }
-#custom-launcher:hover { color: #eceff4; background-color: #81a1c1; }
-
-/* End of CSS */
+#custom-launcher { color: #7E9CD8; font-size: 1.3rem; } /* #7E9CD8 */
+#custom-launcher:hover { color: #938AA9; background-color: #7E9CD8; } /* #938AA9, #7E9CD8 */

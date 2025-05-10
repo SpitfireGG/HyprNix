@@ -1,5 +1,12 @@
 
 
+
+
+
+
+
+exec-once = dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XCURSOR_THEME XCURSOR_SIZE GTK_THEME
+
 exec-once  = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP 
 
 exec-once  = exec-once=dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY
@@ -20,12 +27,16 @@ exec-once  = waybar
 
 exec-once  = nm-applet 
 
+exec-once  = blueman-applet
+
 exec-once  = dunst  
 
-exec-once = pypr
 
 exec-once = hyprctl setcursor Phinger-Cursors 18
 
 exec-once  = notify-send -a aurora "Ayoo $(whoami), my Nigga !!"  
+
+
+
 
 

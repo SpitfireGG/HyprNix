@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
   };
+
   outputs =
     { self, nixpkgs }:
     let
@@ -24,6 +25,7 @@
           cp style.css $out/share/waybar/
         '';
       };
+
       devShells.${system}.default = pkgs.mkShell {
         packages = [
           pkgs.sass

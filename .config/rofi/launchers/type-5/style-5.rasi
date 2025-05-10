@@ -1,93 +1,86 @@
 configuration {
-	modi:                       "drun";
+	modi:                       "drun,run,filebrowser";
     show-icons:                 true;
     display-drun:               "";
     display-run:                "";
     display-filebrowser:        "";
     display-window:             "";
-	drun-display-format:        "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
+	drun-display-format:        "{icon} {name}";
 	window-format:              "{w}   {c}   {t}";
+    drun-show-actions: false;
+    run-history: true;
+    drun-history: true;
 }
 
-/*****----- Global Properties -----*****/
 * {
-    font:                        "CommitMono Nerd Font 8";
+    font:                        "CommitMono Nerd Font 10";
 }
 
-/*****----- Main Window -----*****/
 window {
-    /* properties for window widget */
     transparency:                "real";
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    height:                     340px;
+    height:                     400px;
     width:                       600px;
     x-offset:                    0px;
     y-offset:                    0px;
-
-    /* properties for all widgets */
     enabled:                     true;
     margin:                      0px;
     padding:                     0px;
-    border-radius:               1px;
-    border-color:                green;
+    border-radius:               10px;
+    border:                      2px;
+    border-color:                #7E9CD8; /* base0D Blue accent */
     cursor:                      "default";
-    background-color:             rgba(46, 52, 64, 0.9);
-
-    background-image:            url("~/.config/rofi/images/wp5954933-anime-4k-girl-wallpapers.jpg", width);
+    background-color:             rgba(31, 31, 40, 0.95); /* base00 #1F1F28 with 95% opacity */
 }
 
-/*****----- Main Box -----*****/
 mainbox {
     enabled:                     true;
-    spacing:                     20px;
-    padding:                     40px;
+    spacing:                     10px;
+    padding:                     20px;
     background-color:            transparent;
     children:                    [ "inputbar", "listview" ];
 }
 
-/*****----- Inputbar -----*****/
 inputbar {
-
     enabled:                     true;
-    spacing:                     0px;
-    margin:                      0px 300px 0px 0px;
-    padding:                     09px;
+    spacing:                     8px;
+    margin:                      0px;
+    padding:                     8px 15px;
     border:                      1px;
-    border-radius:              0px;
-    border-color:                white;
-    background-color:    rgba(46, 52, 64, 0.9);
+    border-radius:              10px;
+    border-color:                #7E9CD8; /* base0D Blue accent */
+    background-color:    rgba(42, 42, 55, 0.9); /* base01 #2A2A37 with 90% opacity */
     children:                    [ "textbox-prompt-colon", "entry" ];
 }
 
 textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
-    padding:                     8px 11px;
-    border-radius:               8px;
+    padding:                     0px;
     background-color:            transparent;
-    text-color:                  white;
+    text-color:                  #7E9CD8; /* base0D Blue accent */
     str:                         "";
 }
+
 entry {
     enabled:                     true;
-    padding:                     8px 12px;
+    padding:                     0px;
     border:                      0px;
     background-color:            transparent;
-    text-color:                  white;
+    text-color:                  #DCD7BA; /* base05 Foreground */
     cursor:                      text;
     placeholder:                 "Search...";
-    placeholder-color:           inherit;
+    placeholder-color:           #C8C093; /* base04 Muted gray */
     vertical-align:              0.5;
     horizontal-align:            0.0;
 }
 
-/*****----- Listview -----*****/
 listview {
     enabled:                     true;
     columns:                     1;
-    lines:                       8;
+    lines:                       10;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
@@ -95,40 +88,39 @@ listview {
     reverse:                     false;
     fixed-height:                true;
     fixed-columns:               true;
-    
-    spacing:                     10px;
-    margin:                      0px 200px 0px 0px;
-    padding:                     10px;
-    border:                      1px;
+    spacing:                     8px;
+    margin:                      0px;
+    padding:                     5px;
+    border:                      0px;
     border-radius:               0px;
-    border-color:                white;
-    background-color:            rgba(46, 52, 64, 0.8);
-
+    background-color:            transparent;
     cursor:                      "default";
 }
 
-/*****----- Elements -----*****/
 element {
     enabled:                     true;
     spacing:                     10px;
     margin:                      0px;
-    padding:                     5px 10px;
+    padding:                     8px 15px;
     border:                      0px;
     border-radius:               18px;
-    border-color:                white;
     background-color:            transparent;
-    text-color:                  #162022;
+    text-color:                  #DCD7BA; /* base05 Foreground */
     cursor:                      pointer;
 }
+
 element selected.normal {
-    background-color:            rgba(59, 66, 82, 0.8);
-    text-color:                  white;
+    background-color:            #223249; /* base02 Medium background */
+    text-color:                  #DCD7BA; /* base05 Foreground */
 }
+
+
 element-icon {
     background-color:            transparent;
-    size:                        32px;
+    size:                        28px;
     cursor:                      inherit;
 }
+
 element-text {
     background-color:            inherit;
     text-color:                  inherit;
@@ -137,17 +129,18 @@ element-text {
     horizontal-align:            0.0;
 }
 
-/*****----- Message -----*****/
 error-message {
     padding:                     20px;
-    background-color:            transparent;
-    text-color:                  white;
+    background-color:            #C34043; 
+    text-color:                  #DCD7BA; 
 }
+
 message {
-    padding:                     0px;
-    background-color:            inherit;
-    text-color:                  #FF9030;
+    padding:                     10px;
+    background-color:            #2A2A37; 
+    text-color:                  #7E9CD8; 
 }
+
 textbox {
     padding:                     0px;
     border-radius:               0px;

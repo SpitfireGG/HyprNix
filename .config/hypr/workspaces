@@ -41,7 +41,6 @@ binde = Super, Apostrophe, splitratio, 0.1
 # Fullscreen
 bind = ALT, F, fullscreen, 0
 bind = ALT, D, fullscreen, 1
-bind = Super_Alt, F, fakefullscreen, 0
 
 # Switching
 bind = Super, 1, workspace, 1

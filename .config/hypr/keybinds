@@ -16,6 +16,8 @@ bind = $mainMod, E, exec, thunar
 bind = $mainMod, return, exec, kitty # open terminal
 bind = $mainMod, C, exec, code # open vs code
 bind = $mainMod, F, exec, firefox # open browser
+bind = $mainMod, L, exec, edge # open browser
+
 bind = $mainModShift,F , exec, firefox --private-window # open browser
 bind = $mainMod, T, exec, font-manager
 bind = $mainMod, D,exec, discord
@@ -41,7 +43,7 @@ bindl = Alt, delete, exec, shutdown --halt +1
 bindl = ALT,R, exec, reboot
 
 
-bind = $mainMod, space, exec, /home/kenzo/.config/rofi/launchers/type-6/launcher.sh     # launch desktop applications
+bind = $mainMod, space, exec, /home/kenzo/.config/rofi/launchers/type-5/launcher.sh     # launch desktop applications
 bind = $mainMod, backspace, exec, /home/kenzo/.config/rofi/powermenu/type-2/powermenu.sh     # launch desktop applications
 bind = $mainMod, tab, exec, pkill rofi || ~/.config/hypr/scripts/rofilaunch.sh  # switch between desktop applications
 
@@ -72,8 +74,8 @@ bind = SuperShift, P, exec, playerctl play-pause
 bind = $mainMod, P, exec, grim -g "$(slurp)" - | swappy -f - # screenshot snip
 
 
-bind = SuperAlt, f12, exec, notify-send "Hyprland version: $(hyprctl version | head -2 | tail -1 | cut -f2 -d ' ')" "eww eww nigga" -a 'Hyprland keybind'
-bind = SuperAlt, f12, exec, notify-send "Millis since epoch" "$(date +%s%N | cut -b1-13)" -a 'Hyprland keybind'
+bind = $mainMod, J, exec, notify-send "Hyprland version: $(hyprctl version | head -2 | tail -1 | cut -f2 -d ' ')" "" -a 'Hyprland keybind'
+bind = $mainMod, Y, exec, notify-send "Millis since epoch" "$(date +%s%N | cut -b1-13)" -a 'Hyprland keybind'
 bind = SuperAlt, Equal, exec, notify-send "Hyprland test" "oh yeah this fucking works well" -u critical -a 'Hyprland keybind'
 
 
