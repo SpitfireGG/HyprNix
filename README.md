@@ -37,9 +37,9 @@ Visual examples of the configuration.
 Configured declaratively using Nixvim, with advanced LSP support (including `nixd` for Nix files) and `nvim-cmp`.
 
 <div align="center">
-  <img src="assets/nvim.png" width="45%" alt="Neovim LSP Hover">
-  <img src="assets/lsp.png" width="45%" alt="Neovim Completion Popup">
-  <img src="assets/terminal.png" width="45%" alt="Neovim Completion Popup">
+  <img src="assets/nvim.png" width="100%" alt="Neovim LSP Hover">
+  <img src="assets/lsp.png" width="50%" alt="Neovim Completion Popup">
+  <img src="assets/terminal.png" width="50%" alt="Neovim Completion Popup">
 </div>
 
 ---
