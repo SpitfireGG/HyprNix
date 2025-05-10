@@ -31,14 +31,15 @@ Visual examples of the configuration.
 ### Hyprland Desktop
 | Home | Terminal with tmux | Browsing  |
 |--------------|----------|-------------------|
-| <img src="assets/home.png" width="100%" alt="Hyprland with Spotify"> | <img src="assets/pipes.png" width="100%" alt="Hyprland with Terminals"> | <img src="assets/firefox.png" width="100%" alt="Hyprland with firefox"> |
+| <img src="assets/home.png" width="100%" alt="Hyprland with Spotify"> | <img src="assets/btop.png" width="100%" alt="Hyprland with Terminals"> | <img src="assets/firefox.png" width="100%" alt="Hyprland with firefox"> |
 
 ### Neovim
 Configured declaratively using Nixvim, with advanced LSP support (including `nixd` for Nix files) and `nvim-cmp`.
 
 <div align="center">
-  <img src="assets/nixvim.png" width="45%" alt="Neovim LSP Hover">
+  <img src="assets/nvim.png" width="45%" alt="Neovim LSP Hover">
   <img src="assets/lsp.png" width="45%" alt="Neovim Completion Popup">
+  <img src="assets/terminal.png" width="45%" alt="Neovim Completion Popup">
 </div>
 
 ---
