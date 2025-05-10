@@ -38,8 +38,8 @@ Configured declaratively using Nixvim, with advanced LSP support (including `nix
 
 <div align="center">
   <img src="assets/nvim.png" width="100%" alt="Neovim LSP Hover">
-  <img src="assets/lsp.png" width="50%" alt="Neovim Completion Popup">
-  <img src="assets/terminal.png" width="50%" alt="Neovim Completion Popup">
+  <img src="assets/lsp.png" width="100%" alt="Neovim Completion Popup">
+  <img src="assets/terminal.png" width="100%" alt="Neovim Completion Popup">
 </div>
 
 ---
